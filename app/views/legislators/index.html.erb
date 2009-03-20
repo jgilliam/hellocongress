@@ -1,4 +1,6 @@
-<h1>Listing legislators</h1>
+<h1>Hello, Congress.</h1>
+
+<%= render :partial => "legislators/form" %>
 
 <table>
   <tr>
@@ -15,7 +17,7 @@
     <td><%=h legislator.party %></td>
     <td><%=h legislator.govtrack_id %></td>
     <td><%=h legislator.constituents_count %></td>
-    <td><%=h legislator.last_crawled_at %></td>
+    <td><%= time_ago(legislator.last_crawled_at) %></td>
     <td><%= link_to 'Show', legislator %></td>
     <td><%= link_to 'Edit', edit_legislator_path(legislator) %></td>
     <td><%= link_to 'Destroy', legislator, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -2,19 +2,36 @@ class LegislatorsController < ApplicationController
   # GET /legislators
   # GET /legislators.xml
   def index
-    @legislators = Legislator.find(:all)
-
+    if params[:q] and request.xhr?
+      @legislators = Legislator.find(:all, :select => "legislators.fullname, legislators.name", :conditions => ["name LIKE ? or fullname like ?", "%#{h(params[:q])}%","%#{h(params[:q])}%"], :order => "name desc")
+    else
+      @legislators = Legislator.find(:all)
+    end
+    @legislator = Legislator.new
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @legislators }
+      format.js { render :text => @legislators.collect{|p|p.name}.join("\n") }      
     end
+  end
+  
+  def search
+    @legislators = Legislator.find(:all, :conditions => ["name LIKE ? or fullname like ?", h(params[:legislator][:name]),h(params[:legislator][:name])], :order => "name desc")
+    if @legislators.size == 1
+      redirect_to @legislators[0]
+      return
+    end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @legislators }
+    end    
   end
 
   # GET /legislators/1
   # GET /legislators/1.xml
   def show
     @legislator = Legislator.find(params[:id])
-
+    @page_title = "Hello " + @legislator.lastname_with_title
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @legislator }
