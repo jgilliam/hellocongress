@@ -79,7 +79,7 @@ Rails::Initializer.run do |config|
   # Please note that observers generated using script/generate observer need to have an _observer suffix
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
   
-  require 'sunlight'
+  require 'Sunlight'
   
   Sunlight::Base.api_key = '18275aa5bde9975d0ad63687b5ff12c8'
   
