@@ -2,7 +2,6 @@ namespace :sunlight do
   
   desc "update legislators from sunlight api"
   task :legislators => :environment do
-    require 'sunlight'
     for state in State::NAMES
       for s in Sunlight::Legislator.all_where(:state => state[1])
         l = Legislator.find_or_create_by_firstname_and_lastname(s.firstname,s.lastname)
