@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  type: MyString
+  party: MyString
+  govtrack_id: 1
+  constituents_count: 1
+  last_crawled_at: 2009-03-20 13:03:28
+
+two:
+  type: MyString
+  party: MyString
+  govtrack_id: 1
+  constituents_count: 1
+  last_crawled_at: 2009-03-20 13:03:28

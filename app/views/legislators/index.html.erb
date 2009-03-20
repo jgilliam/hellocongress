@@ -1,0 +1,28 @@
+<h1>Listing legislators</h1>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Party</th>
+    <th>Govtrack</th>
+    <th>Constituents count</th>
+    <th>Last crawled at</th>
+  </tr>
+
+<% for legislator in @legislators %>
+  <tr>
+    <td><%=h legislator.type %></td>
+    <td><%=h legislator.party %></td>
+    <td><%=h legislator.govtrack_id %></td>
+    <td><%=h legislator.constituents_count %></td>
+    <td><%=h legislator.last_crawled_at %></td>
+    <td><%= link_to 'Show', legislator %></td>
+    <td><%= link_to 'Edit', edit_legislator_path(legislator) %></td>
+    <td><%= link_to 'Destroy', legislator, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New legislator', new_legislator_path %>

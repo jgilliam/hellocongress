@@ -1,0 +1,28 @@
+<p>
+  <b>Type:</b>
+  <%=h @legislator.type %>
+</p>
+
+<p>
+  <b>Party:</b>
+  <%=h @legislator.party %>
+</p>
+
+<p>
+  <b>Govtrack:</b>
+  <%=h @legislator.govtrack_id %>
+</p>
+
+<p>
+  <b>Constituents count:</b>
+  <%=h @legislator.constituents_count %>
+</p>
+
+<p>
+  <b>Last crawled at:</b>
+  <%=h @legislator.last_crawled_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_legislator_path(@legislator) %> |
+<%= link_to 'Back', legislators_path %>
