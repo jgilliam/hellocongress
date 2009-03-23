@@ -1,6 +1,11 @@
 class Priority < ActiveRecord::Base
 
+  named_scope :by_score, :order => "score desc"
+  named_scope :by_position, :order => "position asc"
+  named_scope :no_constituents, :conditions => "constituents_count = 0"
+
   belongs_to :legislator
+  has_many :rankings
   
   before_save :update_url
   

@@ -9,10 +9,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090323192224) do
+ActiveRecord::Schema.define(:version => 20090323200922) do
 
   create_table "legislators", :force => true do |t|
-    t.string   "type",               :limit => 25
     t.string   "name",               :limit => 100
     t.string   "fullname",           :limit => 100
     t.string   "nickname",           :limit => 30
@@ -82,9 +81,16 @@ ActiveRecord::Schema.define(:version => 20090323192224) do
   add_index "priorities", ["legislator_id"], :name => "index_priorities_on_legislator_id"
   add_index "priorities", ["wh2_id"], :name => "index_priorities_on_wh2_id"
 
-  create_table "wh2_priorities", :force => true do |t|
+  create_table "rankings", :force => true do |t|
+    t.integer  "priority_id"
+    t.integer  "version"
+    t.integer  "position"
+    t.integer  "endorsers_count", :default => 0
+    t.integer  "opposers_count",  :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "rankings", ["priority_id", "version"], :name => "index_rankings_on_priority_id_and_version"
 
 end

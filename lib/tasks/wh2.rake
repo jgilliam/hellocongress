@@ -24,8 +24,10 @@ namespace :wh2 do
   task :priorities => :environment do
     for legislator in Legislator.all
       wh2leg = Wh2Legislator.find(legislator.wh2_id)
+      legislator.update_attribute(:constituents_count, wh2leg.constituents_count) if wh2leg.constituents_count != legislator.constituents_count
       wh2priorities = wh2leg.get(:constituent_priorities)
       position = 0
+      puts legislator.name + ' - ' + wh2priorities.size.to_s
       for wh2priority in wh2priorities
         position += 1
         priority = Priority.find_or_create_by_legislator_id_and_wh2_id(legislator.id,wh2priority["priority"]["id"])
@@ -44,7 +46,11 @@ namespace :wh2 do
         priority.crawled_at = Time.now
         priority.save
       end
+      for p in legislator.priorities.no_constituents
+        p.destroy
+      end
     end
+
   end
 
 end
