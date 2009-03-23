@@ -1,1 +1,22 @@
 <h1>Hello, <%= @legislator.lastname_with_title %>.</h1>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<% for priority in @priorities %>
+	<tr>
+		<td valign="top" align="right">
+			<div class="priority_position">
+			<%= priority.position %>	
+			</div>
+		</td>
+		<td valign="top" style="padding-bottom: 5px;">
+			<div class="priority_name"><a href="<%= priority.url %>"><%= priority.name %></a></div>
+			<div class="priority_numbers">
+				<%= priority_sentence(priority) %>
+			</div>
+		</td>
+	</tr>
+<% end %>
+</table>
+
+<p>
+<%= will_paginate(@priorities) %>

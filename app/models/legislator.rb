@@ -4,6 +4,10 @@ class Legislator < ActiveRecord::Base
   has_many :priorities
   has_many :rankings, :through => :priorities
   
+  def to_param
+    "#{id}-#{name.gsub(/[^a-z0-9]+/i, '-').downcase}"
+  end
+  
   def name_with_title
     title + '. ' + name
   end

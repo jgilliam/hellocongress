@@ -1,9 +1,30 @@
 body {
 	font-family: Optima, Helvetica, Verdana, Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;	
 }
 
 abbr {
 	border:none;
+}
+
+
+.priority_position {
+	font-size: 1.7em;
+	padding-right: 10px;
+	position: relative;
+	top: -2px;
+}
+
+.priority_numbers {
+	font-size: 0.8em;
+}
+
+.constituents_count {
+	font-size: 0.8em;
+	color: #999;
 }
 
 /* jquery auto complete stuff */

@@ -52,8 +52,10 @@ class LegislatorsController < ApplicationController
   # GET /legislators/1
   # GET /legislators/1.xml
   def show
+    @per_page = 25
     @legislator = Legislator.find(params[:id])
     @page_title = "Hello, " + @legislator.lastname_with_title + '.'
+    @priorities = @legislator.priorities.by_position.paginate :page => params[:page], :per_page => @per_page
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @legislator }
