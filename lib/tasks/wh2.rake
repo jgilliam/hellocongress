@@ -19,5 +19,32 @@ namespace :wh2 do
       end
     end
   end
+  
+  desc "crawls wh2 for the constituent priorities of each legislator.  this should be run regularly, every hour or day"
+  task :priorities => :environment do
+    for legislator in Legislator.all
+      wh2leg = Wh2Legislator.find(legislator.wh2_id)
+      wh2priorities = wh2leg.get(:constituent_priorities)
+      position = 0
+      for wh2priority in wh2priorities
+        position += 1
+        priority = Priority.find_or_create_by_legislator_id_and_wh2_id(legislator.id,wh2priority["priority"]["id"])
+        priority.name = wh2priority["priority"]["name"]
+        priority.issues_list = wh2priority["priority"]["cached_issue_list"]
+        priority.position = position
+        priority.score = wh2priority["score"].to_i
+        priority.constituents_count = wh2priority["endorsers_count"].to_i+wh2priority["opposers_count"].to_i
+        priority.endorsers_count = wh2priority["endorsers_count"]
+        priority.opposers_count = wh2priority["opposers_count"]
+        priority.points_count = wh2priority["priority"]["points_count"]
+        priority.documents_count = wh2priority["priority"]["documents_count"]
+        priority.obama_status = wh2priority["priority"]["obama_status"]
+        priority.wh2_position = wh2priority["priority"]["position"]
+        priority.published_at = Time.now unless priority.attribute_present?("published_at")
+        priority.crawled_at = Time.now
+        priority.save
+      end
+    end
+  end
 
 end
