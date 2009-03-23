@@ -27,27 +27,31 @@ namespace :wh2 do
       legislator.update_attribute(:constituents_count, wh2leg.constituents_count) if wh2leg.constituents_count != legislator.constituents_count
       wh2priorities = wh2leg.get(:constituent_priorities)
       position = 0
-      puts legislator.name + ' - ' + wh2priorities.size.to_s
-      for wh2priority in wh2priorities
-        position += 1
-        priority = Priority.find_or_create_by_legislator_id_and_wh2_id(legislator.id,wh2priority["priority"]["id"])
-        priority.name = wh2priority["priority"]["name"]
-        priority.issues_list = wh2priority["priority"]["cached_issue_list"]
-        priority.position = position
-        priority.score = wh2priority["score"].to_i
-        priority.constituents_count = wh2priority["endorsers_count"].to_i+wh2priority["opposers_count"].to_i
-        priority.endorsers_count = wh2priority["endorsers_count"]
-        priority.opposers_count = wh2priority["opposers_count"]
-        priority.points_count = wh2priority["priority"]["points_count"]
-        priority.documents_count = wh2priority["priority"]["documents_count"]
-        priority.obama_status = wh2priority["priority"]["obama_status"]
-        priority.wh2_position = wh2priority["priority"]["position"]
-        priority.published_at = Time.now unless priority.attribute_present?("published_at")
-        priority.crawled_at = Time.now
-        priority.save
-      end
-      for p in legislator.priorities.no_constituents
-        p.destroy
+      if wh2priorities.size != legislator.priorities.size
+        puts 'Processing ' + legislator.name + ' - ' + wh2priorities.size.to_s
+        for wh2priority in wh2priorities
+          position += 1
+          priority = Priority.find_or_create_by_legislator_id_and_wh2_id(legislator.id,wh2priority["priority"]["id"])
+          priority.name = wh2priority["priority"]["name"]
+          priority.issues_list = wh2priority["priority"]["cached_issue_list"]
+          priority.position = position
+          priority.score = wh2priority["score"].to_i
+          priority.constituents_count = wh2priority["endorsers_count"].to_i+wh2priority["opposers_count"].to_i
+          priority.endorsers_count = wh2priority["endorsers_count"]
+          priority.opposers_count = wh2priority["opposers_count"]
+          priority.points_count = wh2priority["priority"]["points_count"]
+          priority.documents_count = wh2priority["priority"]["documents_count"]
+          priority.obama_status = wh2priority["priority"]["obama_status"]
+          priority.wh2_position = wh2priority["priority"]["position"]
+          priority.published_at = Time.now unless priority.attribute_present?("published_at")
+          priority.crawled_at = Time.now
+          priority.save
+        end
+        for p in legislator.priorities.no_constituents
+          p.destroy
+        end
+      else
+        puts 'Skipping ' + legislator.name
       end
     end
 
