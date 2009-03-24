@@ -1,0 +1,2 @@
+class ConstituentsController < ApplicationController
+end

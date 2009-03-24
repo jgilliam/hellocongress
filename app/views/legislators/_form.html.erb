@@ -8,4 +8,4 @@
 </tr>
 </table>
 <% end %>
-<div id="search_links"><%= link_to_unless_current "Full list", legislators_url %></div>
+<div id="search_links"><a href="http://<%= BASE_URL %><%= url_for legislators_url(:only_path => true) %>">Full List</a></div>

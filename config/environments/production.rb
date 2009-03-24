@@ -24,3 +24,4 @@ config.action_controller.perform_caching             = true
 # config.action_mailer.raise_delivery_errors = false
 
 WH2_BASE_URL = 'http://whitehouse2.org'
+BASE_URL = 'hellocongress.org'

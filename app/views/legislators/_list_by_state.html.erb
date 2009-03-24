@@ -1,4 +1,4 @@
 <b><%= state %></b><br/>
 <% for legislator in legislators %>
-	<%= link_to legislator.name_with_title, legislator %><% if legislator.constituents_count > 0 %> <span class="constituents_count"><%= legislator.constituents_count %></span><% end %><br/>
+	<a href="<%= legislator.url %>"><%= legislator.name_with_title %></a><% if legislator.constituents_count > 0 %> <span class="constituents_count"><%= legislator.constituents_count %></span><% end %><br/>
 <% end %>

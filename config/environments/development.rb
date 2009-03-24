@@ -17,3 +17,4 @@ config.action_controller.perform_caching             = false
 config.action_mailer.raise_delivery_errors = false
 
 WH2_BASE_URL = 'http://dev.whitehouse2.org:3000'
+BASE_URL = 'jim.com:3001'

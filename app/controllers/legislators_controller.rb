@@ -22,7 +22,7 @@ class LegislatorsController < ApplicationController
     @q = h(params[:legislator][:name])
     @legislators = Legislator.find(:all, :conditions => ["name LIKE ? or fullname like ?", @q,@q], :order => "name desc")
     if @legislators.size == 1
-      redirect_to @legislators[0]
+      redirect_to @legislators[0].url
       return
     end
     if @legislators.empty?
@@ -52,13 +52,10 @@ class LegislatorsController < ApplicationController
   # GET /legislators/1
   # GET /legislators/1.xml
   def show
-    @per_page = 25
     @legislator = Legislator.find(params[:id])
     @page_title = "Hello, " + @legislator.name_with_title + "."
-    @header_title = "Hello " + @legislator.lastname_with_title + ", "
-    @priorities = @legislator.priorities.by_position.paginate :page => params[:page], :per_page => @per_page
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { redirect_to @legislator.url } 
       format.xml  { render :xml => @legislator }
     end
   end
