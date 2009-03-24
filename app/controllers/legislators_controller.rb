@@ -14,7 +14,7 @@ class LegislatorsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @legislators }
-      format.js { render :text => @legislators.collect{|p|p.name_with_title}.join("\n") }      
+      format.js { render :text => @legislators.collect{|p|p.name}.join("\n") }      
     end
   end
   
@@ -55,6 +55,7 @@ class LegislatorsController < ApplicationController
     @per_page = 25
     @legislator = Legislator.find(params[:id])
     @page_title = "Hello, " + @legislator.name_with_title + "."
+    @header_title = "Hello " + @legislator.lastname_with_title + ", "
     @priorities = @legislator.priorities.by_position.paginate :page => params[:page], :per_page => @per_page
     respond_to do |format|
       format.html # show.html.erb

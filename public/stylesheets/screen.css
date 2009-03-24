@@ -24,6 +24,16 @@ h1 {
 	text-align:left;
 }
 
+#search_form {
+	float: right;
+	margin-top: 10px;
+	margin-right: 80px;
+}
+#search_links {
+	margin: 3px 0px 0px 0px;
+	font-size: 0.8em;
+}
+
 .priority_position {
 	font-size: 1.7em;
 	padding-right: 10px;

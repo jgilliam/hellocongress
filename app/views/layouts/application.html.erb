@@ -13,8 +13,20 @@
 
 <div align="center">
 <div id="container">
-<%= flash_div :warning, :notice, :error %>
-<%= yield :layout %>
+
+	<div id="search_form">
+	<%= render :partial => "legislators/form" %>
+	</div>
+
+	<div id="header">
+	<h1><%= @header_title || "Hello Congress," %></h1>
+	<div id="tagline">We're your constituents, and we're here to serve <i>you</i>.</div>
+	</div>
+	
+	<%= flash_div :warning, :notice, :error %>
+	<%= yield :layout %>
+
+
 </div>
 </div>
 
