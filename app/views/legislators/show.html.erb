@@ -1,6 +1,12 @@
-<h1>Hello, <%= @legislator.lastname_with_title %>.</h1>
-
+<h1>Hello <%= @legislator.lastname_with_title %>,</h1>
+<div id="tagline">We're your constituents, and we're here to serve <i>you</i>.</div>
+<p>
 <table border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td align="right" style="padding-right: 5px;"><span class="table_header">Rank</span></td>
+		<td style="padding-left: 3px;"><span class="table_header">Wk</span></td>
+		<td style="padding-left: 3px;"><span class="table_header">Mo</span></td>
+	</tr>
 <% for priority in @priorities %>
 	<tr>
 		<td valign="top" align="right">
@@ -8,7 +14,8 @@
 			<%= priority.position %>	
 			</div>
 		</td>
-		<td valign="top" style="padding-bottom: 5px;">
+		<%= render :partial => "priorities/rank_yday_month", :locals => {:priority => priority} %>
+		<td valign="top" style="padding-bottom: 5px; padding-left: 5px;">
 			<div class="priority_name"><a href="<%= priority.url %>"><%= priority.name %></a></div>
 			<div class="priority_numbers">
 				<%= priority_sentence(priority) %>

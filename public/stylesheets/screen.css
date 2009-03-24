@@ -3,13 +3,26 @@ body {
 	font-weight: normal;
 	font-style: normal;
 	font-variant: normal;
-	text-transform: none;	
+	text-transform: none;
+	margin: 20px 0px 20px 0px;
 }
 
 abbr {
 	border:none;
 }
 
+h1 {
+	margin: 0px;
+}
+
+#tagline {
+	margin: 0px 0px 5px 3px;
+}
+
+#container {
+	width: 970px;
+	text-align:left;
+}
 
 .priority_position {
 	font-size: 1.7em;
@@ -22,8 +35,53 @@ abbr {
 	font-size: 0.8em;
 }
 
+.priority_new {
+	font-size: 11px;	
+	color: #cc0000;
+	text-align: center;
+	padding-top: 4px;	
+}
+.priority_unchanged {
+	font-size: 11px;
+	color: #999;
+	text-align: left;
+	text-align: center;	
+	position: relative;
+	top: 5px;	
+}
+.priority_down {
+	background-image: url("/images/red_down.gif");
+	background-repeat: no-repeat;
+	background-position: bottom center;	
+	width: 15px;
+	padding-bottom: 6px;	
+	font-size: 11px;
+	color: #000033;
+	text-align: center;		
+	position: relative;
+	top: 3px;	
+}
+.priority_up {
+	background-image: url("/images/green_up.gif");
+	background-repeat: no-repeat;
+	background-position: top center;
+	width: 15px;
+	font-size: 11px;
+	color: #000033;	
+	text-align: center;	
+	padding-top: 6px;
+	position: relative;
+	top: 5px;
+}
+
 .constituents_count {
 	font-size: 0.8em;
+	color: #999;
+}
+
+.table_header {
+	font-size: 11px;
+	text-transform:uppercase;
 	color: #999;
 }
 
@@ -75,3 +133,9 @@ abbr {
 	color: white;
 }
 /* end jquery autocomplete stuff */
+
+.pagination .current {
+	background-color: #eee;
+	padding: 3px;
+	font-weight: bold;
+}

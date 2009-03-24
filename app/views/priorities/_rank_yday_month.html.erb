@@ -1,0 +1,24 @@
+<% if priority.created_at > Time.now-(86400*7) %>
+<td valign="top" align="center" colspan="2">
+	<div class="priority_new">NEW</div>
+</td>
+<% elsif priority.position_7days_change == 0 and priority.position_30days_change == 0 %>
+<td valign="top" align="center" colspan="2">
+	<div class="priority_unchanged">UNCH</div>
+</td>		
+<% else %>
+<td valign="top" style="padding-left: 2px;">
+	<% if priority.position_7days_change > 0 %>
+		<div class="priority_up"><%= priority.position_7days_change.abs %></div>
+	<% elsif priority.position_7days_change < 0 %>
+		<div class="priority_down"><%= priority.position_7days_change.abs %></div>
+	<% end %>
+</td>
+<td valign="top" style="padding-left: 3px;">
+	<% if priority.position_30days_change > 0 %>
+		<div class="priority_up"><%= priority.position_30days_change.abs %></div>
+	<% elsif priority.position_30days_change < 0 %>
+		<div class="priority_down"><%= priority.position_30days_change.abs %></div>
+	<% end %>
+</td>		
+<% end %>			
