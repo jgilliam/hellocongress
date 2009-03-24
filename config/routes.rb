@@ -1,6 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.resources :legislators
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -26,6 +25,8 @@ ActionController::Routing::Routes.draw do |map|
   #     products.resources :sales, :collection => { :recent => :get }
   #   end
 
+  map.resources :legislators, :priorities, :constituents
+
   # Sample resource route within a namespace:
   #   map.namespace :admin do |admin|
   #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
@@ -33,7 +34,7 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  map.root :controller => "priorities"
+  # map.root :controller => "priorities"
 
   # See how all your routes lay out with "rake routes"
 
