@@ -46,12 +46,21 @@ h2, h3 {
 #search_form {
 	float: right;
 	margin-top: 10px;
-	margin-right: 155px;
+	margin-right: 20px;
 }
 #search_links {
 	margin: 3px 0px 0px 2px;
-	font-size: 0.7em;
 }
+#legislator_submit {
+	border: solid 1px #DDD;
+	font-size: 1em;
+	padding: 2px 2px 2px 2px;
+}
+.ac_input {
+	font-size: 1em;
+	width: 235px;
+}
+
 #legislator_nav {
 	margin: 10px 0px 15px 0px;
 }
@@ -134,10 +143,6 @@ h2, h3 {
 }
 
 /* jquery auto complete stuff */
-.ac_input {
-	font-size: 1em;
-}
-
 .ac_results {
 	padding: 0px;
 	border: 1px solid black;
