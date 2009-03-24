@@ -52,17 +52,15 @@ h2, h3 {
 	margin: 3px 0px 0px 2px;
 }
 #legislator_submit {
-	border: solid 1px #DDD;
+	border: solid 1px #ddd;
 	font-size: 1em;
+	background-color: #EEE;
+	color: #666;
 	padding: 2px 2px 2px 2px;
 }
 .ac_input {
 	font-size: 1em;
 	width: 235px;
-}
-
-#legislator_nav {
-	margin: 10px 0px 15px 0px;
 }
 
 .priority_position {
@@ -138,10 +136,6 @@ h2, h3 {
 	color: #999;
 }
 
-# {
-	
-}
-
 /* jquery auto complete stuff */
 .ac_results {
 	padding: 0px;
@@ -198,7 +192,7 @@ ul#tabnav { /* general settings */
 	margin: 1em 0 1em 0; /* set margins as desired */
 	font-weight: bold;
 	list-style-type: none;
-	padding: 3px 10px 3px 10px; /* THIRD number must change with respect to padding-top (X) below */
+	padding: 3px 10px 3px 0px; /* THIRD number must change with respect to padding-top (X) below */
 }
 
 ul#tabnav li { /* do not change */
@@ -211,25 +205,22 @@ ul#tabnav li { /* do not change */
 }
 
 #legislator_nav1 li.tab1 a, #legislator_nav2 li.tab2 a, #legislator_nav3 li.tab3 a, #legislator_nav4 li.tab4 a { /* settings for selected tab link */
-	background-color: #fff; /* set selected tab background color as desired */
+	background-color: #ddd; /* set selected tab background color as desired */
 	color: #000; /* set selected tab link color as desired */
-	position: relative;
-	top: 1px;
-	padding-top: 4px; /* must change with respect to padding (X) above and below */
+	padding-top: 3px; /* must change with respect to padding (X) above and below */
 }
 
 ul#tabnav li a { /* settings for all tab links */
 	padding: 3px 10px; /* set padding (tab size) as desired; FIRST number must change with respect to padding-top (X) above */
-	border: 1px solid #999; /* set border COLOR as desired; usually matches border color specified in #tabnav */
-	background-color: #eee; /* set unselected tab background color as desired */
+	background-color: #fff; /* set unselected tab background color as desired */
 	color: #666; /* set unselected tab link color as desired */
 	margin-right: 0px; /* set additional spacing between tabs as desired */
 	text-decoration: none;
-	border-bottom: none;
 }
 
 ul#tabnav a:hover { /* settings for hover effect */
-	background: #fff; /* set desired hover color */
+	color: #000;
+	background: #ddd; /* set desired hover color */
 }
 
 /* end css tabs */
