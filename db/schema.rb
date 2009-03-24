@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090323200922) do
+ActiveRecord::Schema.define(:version => 20090324164825) do
 
   create_table "legislators", :force => true do |t|
     t.string   "name",               :limit => 100
@@ -45,9 +45,11 @@ ActiveRecord::Schema.define(:version => 20090323200922) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "wh2_id"
+    t.string   "short_name",         :limit => 30
   end
 
   add_index "legislators", ["name"], :name => "index_legislators_on_name"
+  add_index "legislators", ["short_name"], :name => "index_legislators_on_short_name"
   add_index "legislators", ["wh2_id"], :name => "index_legislators_on_wh2_id"
 
   create_table "priorities", :force => true do |t|
