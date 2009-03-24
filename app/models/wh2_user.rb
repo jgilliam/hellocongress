@@ -1,5 +1,7 @@
 class Wh2User < ActiveResource::Base
   
+  extend ActiveSupport::Memoizable
+    
   self.site = WH2_BASE_URL
   self.element_name = "user"
 
@@ -14,5 +16,11 @@ class Wh2User < ActiveResource::Base
   def has_picture?
     picture_id.is_a?(Integer)
   end
+
+  def top_priority
+    return nil unless top_endorsement_id
+    Priority.find_by_wh2_id(top_endorsement.priority_id)
+  end
+  memoize :top_priority
 
 end

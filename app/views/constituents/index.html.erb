@@ -1,16 +1,21 @@
 <%= render :partial => "shared/nav" %>
 
 <table border="0" cellspacing="0" cellpadding="0">
-	<tr><td valign="top" width="520">
+	<tr><td valign="top" width="550">
 
 	<table border="0" cellspacing="0" cellpadding="0">
 		<% for user in @constituents %>
-			<tr><td valign="top" style="padding-bottom: 5px;">
+			<tr><td valign="top">
 				<%= render :partial => "shared/user_pic", :locals => {:user => user} %>
 				</td><td valign="top">
 					<div class="user_name">
 					<a href="<%= user.url %>"><%= user.login %></a>
 					<span class="pc"><%= user.capitals_count %>pc</span>
+					<% if user.top_priority %>
+						<br/>#1 priority:
+						<% if user.top_endorsement.is_down? %><span class="opposed">opposing</span><% end %>
+						<a href="<%= user.top_priority.url %>"><%= user.top_priority.name %></a>.
+					<% end %>					
 					</div>
 				</td>
 			</tr>
@@ -21,7 +26,7 @@
 	<p>
 	<%= will_paginate(@constituents) %>
 
-	</td><td valign="top" width="400" style="padding-left: 50px;">
+	</td><td valign="top" width="370" style="padding-left: 50px;">
 
 	</td></tr>
 </table>

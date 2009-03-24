@@ -30,6 +30,11 @@ h2, h3 {
 	margin: 0px 0px 5px 0px;
 }
 
+#header {
+	position: relative;
+	right: 1px;
+}
+
 #tagline {
 	margin: 0px 0px 5px 3px;
 }
@@ -47,6 +52,9 @@ h2, h3 {
 #search_links {
 	margin: 3px 0px 0px 2px;
 	font-size: 0.7em;
+}
+#legislator_nav {
+	margin: 10px 0px 15px 0px;
 }
 
 .priority_position {
@@ -105,8 +113,7 @@ h2, h3 {
 }
 
 .user_name {
-	font-size: 0.8em;
-	padding-left: 5px;
+	padding: 0px 0px 10px 5px;
 }
 .pc {
 	color:#999;
