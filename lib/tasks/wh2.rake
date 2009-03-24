@@ -8,7 +8,9 @@ namespace :wh2 do
       for wh2leg in wh2legs
         leg = Legislator.find_by_govtrack_id(wh2leg.govtrack_id)
         if leg
-          leg.update_attribute(:wh2_id, wh2leg.id)
+          leg.wh2_id = wh2leg.id
+          leg.short_name = wh2leg.short_name
+          leg.save
           puts leg.name + ' ' + wh2leg.id.to_s
         end
       end
@@ -25,6 +27,7 @@ namespace :wh2 do
     for legislator in Legislator.all
       wh2leg = Wh2Legislator.find(legislator.wh2_id)
       legislator.update_attribute(:constituents_count, wh2leg.constituents_count) if wh2leg.constituents_count != legislator.constituents_count
+      legislator.update_attribute(:short_name, wh2leg.short_name) if wh2leg.short_name != legislator.short_name
       wh2priorities = wh2leg.get(:constituent_priorities)
       position = 0
       if wh2priorities.size != legislator.priorities.size
