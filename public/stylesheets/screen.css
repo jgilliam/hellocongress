@@ -129,7 +129,15 @@ h2, h3 {
 	color: #999;
 }
 
+# {
+	
+}
+
 /* jquery auto complete stuff */
+.ac_input {
+	font-size: 1em;
+}
+
 .ac_results {
 	padding: 0px;
 	border: 1px solid black;
@@ -222,9 +230,33 @@ ul#tabnav a:hover { /* settings for hover effect */
 /* end css tabs */
 
 /* paginationn */
-.pagination .current {
-	background-color: #eee;
-	padding: 3px;
-	font-weight: bold;
+.pagination {
+  padding: 3px;
+  margin: 3px;
+  font-size: 0.8em;
+}
+.pagination a {
+  padding: 2px 5px 2px 5px;
+  margin: 2px;
+  border: 1px solid #DDD;
+  text-decoration: none;
+}
+.pagination a:hover, .pagination a:active {
+  border: 1px solid #DDD;
+  background-color: #EEE;
+  color: #000;
+}
+.pagination span.current {
+  padding: 2px 5px 2px 5px;
+  margin: 2px;
+  border: 1px solid #eee;
+  font-weight: bold;
+  background-color: #eee;
+}
+.pagination span.disabled {
+  padding: 2px 5px 2px 5px;
+  margin: 2px;
+  border: 1px solid #eee;
+  color: #ddd;
 }
 /* end pagination */
