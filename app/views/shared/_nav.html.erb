@@ -1,4 +1,7 @@
-<div id="legislator_nav">
-<%= link_to "Priorities", priorities_url %>
-<%= link_to "Constituents", constituents_url %>
+<div id="legislator_nav<% if params[:controller] == 'priorities'%>1<% elsif params[:controller] == 'constituents' %>2<% end %>">
+	<ul id="tabnav">
+		<li class="tab1"><%= link_to "Our Priorities", priorities_url %></li>
+		<li class="tab2"><%= link_to "Meet Your Constituents", constituents_url %></li>
+
+	</ul>
 </div>
