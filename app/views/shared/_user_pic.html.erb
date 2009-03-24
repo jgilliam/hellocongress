@@ -1,0 +1,5 @@
+<% if user.has_picture? %>
+	<a href="<%= user.url %>"><img src="http://whitehouse2.org/pictures/icon_24/<%= user.picture_id %>" border="0"></a>
+<% else %>
+	<a href="<%= user.url %>"><img src="http://whitehouse2.org/images/wh_icon_24.gif" width="24" height="31" border="0"></a>
+<% end %>

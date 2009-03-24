@@ -1,3 +1,5 @@
+<table border="0" cellspacing="0" cellpadding="0">
+	<tr><td valign="top" width="520">
 <p>
 <table border="0" cellspacing="0" cellpadding="0">
 	<tr>
@@ -25,3 +27,34 @@
 
 <p>
 <%= will_paginate(@priorities) %>
+
+	</td><td valign="top" width="400" style="padding-left: 50px;">
+		<p>
+		<h3>Meet <%= @legislator.constituents_count %> of your constituents</h3>
+		<table border="0" cellspacing="0" cellpadding="0">
+			<tr>
+			<% columns = 0 %>
+			<% @legislator.constituents.in_groups_of(5, '&nbsp;') do |row| %>
+				<% columns += 1 %>
+				<% if columns < 3 %>
+				<td valign="top" style="padding-right: 10px;">
+					<table border="0" cellspacing="0" cellpadding="0">
+					<% for user in row %>
+						<tr><td valign="top" style="padding-bottom: 5px;">
+							<%= render :partial => "shared/user_pic", :locals => {:user => user} %>
+							</td><td valign="top">
+								<div class="user_name">
+								<a href="<%= user.url %>"><%= user.login %></a>
+								<span class="pc"><%= user.capitals_count %>pc</span>
+								</div>
+							</td>
+						</tr>
+					<% end %>
+					</table>
+					</td>
+				<% end %>
+			<% end %>
+			</tr>
+		</table>
+	</td></tr>
+</table>
