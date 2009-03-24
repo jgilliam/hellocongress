@@ -10,6 +10,7 @@ jQuery.fn.DefaultValue = function(text){
 		//Set value initially if none are specified
         if(this.value=='') {
 			this.value=text;
+			jQuery(this).css({'color' : 'gray'});
 		} else {
 			//Other value exists - ignore
 			return;
@@ -17,14 +18,18 @@ jQuery.fn.DefaultValue = function(text){
 		
 		//Remove values on focus
 		jQuery(this).focus(function() {
-			if(this.value==text || this.value=='')
+			if(this.value==text || this.value=='') {
 				this.value='';
+				jQuery(this).css({'color' : 'black'});
+			}
 		});
 		
 		//Place values back on blur
 		jQuery(this).blur(function() {
-			if(this.value==text || this.value=='')
+			if(this.value==text || this.value=='') {
 				this.value=text;
+				jQuery(this).css({'color' : 'gray'});
+			}
 		});
 		
 		//Capture parent form submission
