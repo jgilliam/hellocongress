@@ -5,4 +5,5 @@ jQuery.noConflict();
 jQuery(document).ready(function() {
   jQuery("abbr[class*=timeago]").timeago();	
   jQuery("input#legislator_name").autocomplete("/legislators.js");
+  jQuery("input#legislator_name").DefaultValue("Type legislator's name") 
 });

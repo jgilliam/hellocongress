@@ -22,5 +22,14 @@ module ApplicationHelper
     r << pluralize(priority.points_count, "talking point") if priority.points_count > 0
     r.to_sentence        
   end
+  
+  def revisions_sentence(user)
+    return "" if user.points_count+user.documents_count+user.document_revisions_count+user.point_revisions_count == 0
+    r = []
+    r << '<a href="' + user.url + '/points">' + pluralize(user.points_count,"talking point") + '</a>' if user.points_count > 0 
+    r << '<a href="' + user.url + '/documents">' + pluralize(user.documents_count,"document") + '</a>' if user.documents_count > 0   
+    r << pluralize(user.document_revisions_count+user.point_revisions_count,"revision") if user.document_revisions_count > 0 or user.point_revisions_count > 0
+    "contributed " + r.to_sentence
+  end
 
 end

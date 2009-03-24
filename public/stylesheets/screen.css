@@ -31,8 +31,7 @@ h2, h3 {
 }
 
 #header {
-	position: relative;
-	right: 1px;
+	margin: 0px 0px 10px 0px;
 }
 
 #tagline {
@@ -113,7 +112,9 @@ h2, h3 {
 }
 
 .user_name {
-	padding: 0px 0px 10px 5px;
+	position: relative;
+	top: -3px;
+	padding: 0px 0px 15px 8px;
 }
 .pc {
 	color:#999;
