@@ -8,7 +8,7 @@ class PrioritiesController < ApplicationController
     @rss_url = url_for(:only_path => false, :format => "rss")
     respond_to do |format|
       format.html
-      format.xml { render :xml => @priorities }
+      format.xml { render :xml => @priorities.to_xml(:methods => [:url]) }
       format.rss
     end    
   end
