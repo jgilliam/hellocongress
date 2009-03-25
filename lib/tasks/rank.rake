@@ -5,7 +5,7 @@ namespace :rank do
 
     v = 1    
     if highest_version = Ranking.maximum(:version)
-      v = highest_version.version+1 || 1 
+      v = highest_version+1 || 1 
     end
     
     for legislator in Legislator.all
