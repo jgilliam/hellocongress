@@ -29,6 +29,10 @@
 
 		<p>
 		<%= will_paginate(@priorities) %>
+		
+		<div class="xml_footer">
+		This page is also available in <span style="position:relative; top: 2px;"><%= image_tag "feed-icon-14x14.png", :size => "14x14" %></span> <%= link_to "RSS", :format => "rss" %> and <%= link_to "XML", :format => "xml" %>.
+		</div>
 
 	</td><td valign="top" width="370" style="padding-left: 50px;">
 

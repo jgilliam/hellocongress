@@ -42,6 +42,9 @@ h2, h3 {
 	width: 970px;
 	text-align:left;
 }
+#content {
+	margin-top: 20px;
+}
 
 #search_form {
 	float: right;
@@ -134,6 +137,11 @@ h2, h3 {
 	font-size: 11px;
 	text-transform:uppercase;
 	color: #999;
+}
+
+.xml_footer {
+	margin-top: 15px;
+	font-size: 0.8em;
 }
 
 /* jquery auto complete stuff */
