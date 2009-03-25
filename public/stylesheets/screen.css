@@ -236,7 +236,7 @@ ul#tabnav a:hover { /* settings for hover effect */
 /* paginationn */
 .pagination {
   padding: 3px;
-  margin: 3px;
+  margin: 0px;
   font-size: 0.8em;
 }
 .pagination a {
@@ -259,7 +259,7 @@ ul#tabnav a:hover { /* settings for hover effect */
 }
 .pagination span.disabled {
   padding: 2px 5px 2px 5px;
-  margin: 2px;
+  margin: 0px;
   border: 1px solid #eee;
   color: #ddd;
 }
