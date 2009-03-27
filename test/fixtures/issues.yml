@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  wh2_id: 1
+  name: MyString
+  opposers_count: 1
+  endorsers_count: 1
+  priorities_count: 1
+
+two:
+  wh2_id: 1
+  name: MyString
+  opposers_count: 1
+  endorsers_count: 1
+  priorities_count: 1

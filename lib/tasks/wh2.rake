@@ -22,6 +22,31 @@ namespace :wh2 do
     end
   end
   
+  desc "adds wh2 issues"
+  task :issues => :environment do
+    current_page = 1
+    for i in 1..200
+      wh2issues = Wh2Issue.find(:all, :params => { :page => current_page })
+      for wh2issue in wh2issues
+        issue = Issue.find_or_create_by_name(wh2issue.name)
+        if issue
+          issue.wh2_id = wh2issue.id
+          issue.name = wh2issue.name
+          issue.endorsers_count = wh2issue.up_endorsers_count
+          issue.opposers_count = wh2issue.down_endorsers_count
+          issue.priorities_count = wh2issue.priorities_count
+          issue.save
+          puts issue.name
+        end
+      end
+      if wh2issues.size > 29
+        current_page += 1
+      else
+        break
+      end
+    end
+  end  
+  
   desc "crawls wh2 for the constituent priorities of each legislator.  this should be run regularly, every hour or day"
   task :priorities => :environment do
     for legislator in Legislator.all

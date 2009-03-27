@@ -9,7 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090324164825) do
+ActiveRecord::Schema.define(:version => 20090326234741) do
+
+  create_table "issues", :force => true do |t|
+    t.integer  "wh2_id"
+    t.string   "name",             :limit => 60
+    t.integer  "opposers_count",                 :default => 0
+    t.integer  "endorsers_count",                :default => 0
+    t.integer  "priorities_count",               :default => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "legislators", :force => true do |t|
     t.string   "name",               :limit => 100
