@@ -71,16 +71,6 @@ class ResearchesController < ApplicationController
     end
   end
   
-  # GET /researches/search
-  # GET /researches/search.xml  
-  def search
-    @researches = Research.find(:all)
-    respond_to do |format|
-      format.html
-      format.xml  { render :xml => @researches }
-    end    
-  end
-
   # DELETE /researches/1
   # DELETE /researches/1.xml
   def destroy
