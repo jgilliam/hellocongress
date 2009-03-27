@@ -49,3 +49,5 @@ class LegislatorsController < ApplicationController
       format.xml  { render :xml => @legislators }
     end    
   end
+
+end
