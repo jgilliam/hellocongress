@@ -70,8 +70,8 @@ input, textarea, select {
 #legislator_name {
 	width: 235px;
 }
-#research_name, #research_content {
-	width: 400px;
+#research_name, #research_content, #research_requester, #research_email, #research_organization, #research_issue_id {
+	width: 320px;
 }
 
 

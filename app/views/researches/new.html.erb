@@ -12,14 +12,14 @@
 			<div class="field">
 		    	<div class="field_label"><span class="red">*</span> Your name</div>
 				<div class="field_box">
-			    <%= f.text_field :requester %>
+			    <%= f.text_field :requester, :title => "This will be public, you don't need to put your full name if you don't want to.", :class => "bt" %>
 				</div>
 			</div>
 		
 			<div class="field">
 			    <div class="field_label"><span class="red">*</span> Your email address</div>
 				<div class="field_box">
-			    <%= f.text_field :email, :title => "Your email address will be kept private, and you will only get email regarding this research request.", :class => "bt" %>
+			    <%= f.text_field :email, :title => "This will be kept private, and you will only get email regarding this research request.", :class => "bt" %>
 				</div>
 			</div>
 
