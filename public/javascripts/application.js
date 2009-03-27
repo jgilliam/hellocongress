@@ -4,7 +4,29 @@
 jQuery(document).ready(function() {
 	$("abbr[class*=timeago]").timeago();	
 	$("input#legislator_name").autocomplete("/legislators.js");
-	$("input#legislator_name").DefaultValue("Type legislator's name") 
+	$("input#legislator_name").DefaultValue("Find a legislator") 
+	$('input#legislator_name').bt({ 
+		positions: ['left'],
+		padding: 10,
+		width: 140,
+		spikeLength: 20,
+		spikeGirth: 20,
+		cornerRadius: 20,
+		fill: '#ffff99',
+		strokeWidth: 1,
+		strokeStyle: '#ffcc00',
+	});	
+	$('input#q').bt({ 
+		positions: ['bottom'],
+		padding: 10,
+		width: 140,
+		spikeLength: 20,
+		spikeGirth: 20,
+		cornerRadius: 20,
+		fill: '#ffff99',
+		strokeWidth: 1,
+		strokeStyle: '#ffcc00',
+	});	
 	$('input.bt').bt({ 
 		trigger: ['focus', 'blur'], 
 		positions: ['right'],

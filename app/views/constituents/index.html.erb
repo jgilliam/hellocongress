@@ -1,37 +1,26 @@
-<%= render :partial => "shared/nav" %>
-
-<div id="content">
 <table border="0" cellspacing="0" cellpadding="0">
-	<tr><td valign="top" width="720">
-
-	<table border="0" cellspacing="0" cellpadding="0">
-		<% for user in @constituents %>
-			<tr><td valign="top">
-				<%= render :partial => "shared/user_pic", :locals => {:user => user} %>
-				</td><td valign="top">
-					<div class="user_name">
-					<a href="<%= user.url %>"><%= user.login %></a>
-					<span class="pc"><%= user.capitals_count %>pc</span>
-					<%= revisions_sentence(user) %>
-					<% if user.top_priority %>
-						<div class="user_priority">
-						#1 priority:
-						<% if user.top_endorsement.is_down? %><span class="opposed">opposing</span><% end %>
-						<a href="<%= user.top_priority.url %>"><%= user.top_priority.name %></a>.
-						</div>
-					<% end %>					
+	<% for user in @constituents %>
+		<tr><td valign="top">
+			<%= render :partial => "shared/user_pic", :locals => {:user => user} %>
+			</td><td valign="top">
+				<div class="user_name">
+				<a href="<%= user.url %>"><%= user.login %></a>
+				<span class="pc"><%= user.capitals_count %>pc</span>
+				<%= revisions_sentence(user) %>
+				<% if user.top_priority %>
+					<div class="user_priority">
+					#1 priority:
+					<% if user.top_endorsement.is_down? %><span class="opposed">opposing</span><% end %>
+					<a href="<%= user.top_priority.url %>"><%= user.top_priority.name %></a>.
 					</div>
-				</td>
-			</tr>
-		<% end %>
+				<% end %>					
+				</div>
+			</td>
 		</tr>
-	</table>
-
-	<p>
-	<%= will_paginate(@constituents) %>
-
-	</td><td valign="top" width="200" style="padding-left: 50px;">
-
-	</td></tr>
+	<% end %>
+	</tr>
 </table>
-</div>
+
+<p>
+<%= will_paginate(@constituents) %>
+

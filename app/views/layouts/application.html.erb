@@ -31,7 +31,29 @@
 	</div>
 	
 	<%= flash_div :warning, :notice, :error %>
-	<%= yield :layout %>
+	
+	<%= render :partial => "shared/nav" %>
+
+	<div id="content">
+	<table border="0" cellspacing="0" cellpadding="0">
+		<tr><td valign="top" width="600">
+
+			<%= yield :layout %>
+
+		</td><td valign="top" width="300" style="padding-left: 50px;">
+
+			<div id="right_column">
+			<a href="http://whitehouse2.org/">White House 2</a> is a bipartisan network of over 8,000 citizens imagining how the White House might work if it were run completely democratically by thousands of people over the internet.
+			<p>
+			<div align="center">
+			<a href="http://whitehouse2.org/"><%= image_tag "wh2-logo.png", :border => 0 %></a>
+			</div>		
+			<p>We are collaborating on policy and creating a massive database of <%= link_to "talking points", :controller => "briefing" %> covering all sides of every important issue facing our country.
+			<p>
+			</div>
+		</td></tr>
+	</table>
+	</div>
 
 </div>
 </div>

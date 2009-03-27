@@ -1,40 +1,30 @@
-<%= render :partial => "shared/nav" %>
-
 <table border="0" cellspacing="0" cellpadding="0">
-	<tr><td valign="top" width="550">
-		
-		<table border="0" cellspacing="0" cellpadding="0">
-			<tr>
-				<td align="right" style="padding-right: 5px;"><span class="table_header">Rank</span></td>
-				<td style="padding-left: 3px;"><span class="table_header">Wk</span></td>
-				<td style="padding-left: 3px;"><span class="table_header">Mo</span></td>
-			</tr>
-		<% for priority in @priorities %>
-			<tr>
-				<td valign="top" align="right">
-					<div class="priority_position">
-					<%= priority.position %>	
-					</div>
-				</td>
-				<%= render :partial => "priorities/rank_yday_month", :locals => {:priority => priority} %>
-				<td valign="top" style="padding-bottom: 5px; padding-left: 5px;">
-					<div class="priority_name"><a href="<%= priority.url %>"><%= priority.name %></a></div>
-					<div class="priority_numbers">
-						<%= priority_sentence(priority) %>
-					</div>
-				</td>
-			</tr>
-		<% end %>
-		</table>
-
-		<p>
-		<%= will_paginate(@priorities) %>
-		
-		<div class="xml_footer">
-		These priorities are also available in <span style="position:relative; top: 2px;"><%= image_tag "feed-icon-14x14.png", :size => "14x14" %></span> <%= link_to "RSS", :format => "rss" %> and <%= link_to "XML", :format => "xml" %>.
-		</div>
-
-	</td><td valign="top" width="370" style="padding-left: 50px;">
-
-	</td></tr>
+	<tr>
+		<td align="right" style="padding-right: 5px;"><span class="table_header">Rank</span></td>
+		<td style="padding-left: 3px;"><span class="table_header">Wk</span></td>
+		<td style="padding-left: 3px;"><span class="table_header">Mo</span></td>
+	</tr>
+<% for priority in @priorities %>
+	<tr>
+		<td valign="top" align="right">
+			<div class="priority_position">
+			<%= priority.position %>	
+			</div>
+		</td>
+		<%= render :partial => "priorities/rank_yday_month", :locals => {:priority => priority} %>
+		<td valign="top" style="padding-bottom: 5px; padding-left: 5px;">
+			<div class="priority_name"><a href="<%= priority.url %>"><%= priority.name %></a></div>
+			<div class="priority_numbers">
+				<%= priority_sentence(priority) %>
+			</div>
+		</td>
+	</tr>
+<% end %>
 </table>
+
+<p>
+<%= will_paginate(@priorities) %>
+
+<div class="xml_footer">
+These priorities are also available in <span style="position:relative; top: 2px;"><%= image_tag "feed-icon-14x14.png", :size => "14x14" %></span> <%= link_to "RSS", :format => "rss" %> and <%= link_to "XML", :format => "xml" %>.
+</div>

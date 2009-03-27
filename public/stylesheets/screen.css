@@ -31,7 +31,6 @@ h2, h3 {
 }
 
 #header {
-	margin: 0px 0px 10px 0px;
 }
 
 #tagline {
@@ -39,8 +38,9 @@ h2, h3 {
 }
 
 #container {
-	width: 970px;
+	width: 950px;
 	text-align:left;
+	margin-right: 10px;
 }
 #content {
 	margin-top: 20px;
@@ -49,10 +49,13 @@ h2, h3 {
 #search_form {
 	float: right;
 	margin-top: 10px;
-	margin-right: 20px;
 }
 #search_links {
 	margin: 3px 0px 0px 2px;
+}
+#right_column {
+	font-size: 0.8em;
+	line-height: 1.3em;
 }
 #legislator_submit, #research_submit, .search_button {
 	border-right: solid 1px #BBB;
@@ -68,9 +71,9 @@ input, textarea, select {
 	font-family: Optima, Helvetica, Verdana, Arial, sans-serif;	
 }
 #legislator_name, #q {
-	width: 235px;
+	width: 225px;
 }
-#research_name, #research_content, #research_requester, #research_email, #research_organization, #research_issue_id {
+#research_research_request, #research_content, #research_requester, #research_email, #research_organization, #research_issue_id {
 	width: 320px;
 }
 
@@ -87,6 +90,11 @@ input, textarea, select {
 
 .priority_numbers, #search_links {
 	font-size: 0.8em;
+}
+
+.small_content {
+	font-size: 0.9em;
+	line-height: 1.3em;
 }
 
 .priority_new {
@@ -137,6 +145,7 @@ input, textarea, select {
 	position: relative;
 	top: -3px;
 	padding: 0px 0px 15px 8px;
+	font-size: 0.9em;
 }
 .pc {
 	color:#999;
