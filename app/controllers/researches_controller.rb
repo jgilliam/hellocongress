@@ -41,10 +41,10 @@ class ResearchesController < ApplicationController
   # POST /researches.xml
   def create
     @research = Research.new(params[:research])
-
+    @research.legislator = current_legislator
     respond_to do |format|
       if @research.save
-        flash[:notice] = 'Research was successfully created.'
+        flash[:notice] = 'Your research request has been submitted.  Keep your eye on an email from White House 2 with updates on your request.'
         format.html { redirect_to(@research) }
         format.xml  { render :xml => @research, :status => :created, :location => @research }
       else
@@ -69,6 +69,16 @@ class ResearchesController < ApplicationController
         format.xml  { render :xml => @research.errors, :status => :unprocessable_entity }
       end
     end
+  end
+  
+  # GET /researches/search
+  # GET /researches/search.xml  
+  def search
+    @researches = Research.find(:all)
+    respond_to do |format|
+      format.html
+      format.xml  { render :xml => @researches }
+    end    
   end
 
   # DELETE /researches/1

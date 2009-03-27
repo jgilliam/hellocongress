@@ -74,7 +74,6 @@ input, textarea, select {
 	width: 320px;
 }
 
-
 .red {
 	color: #cc0000;
 }
@@ -316,3 +315,34 @@ ul#tabnav a:hover { /* settings for hover effect */
 }
 
 /* end rails errors */
+
+
+/* flash messages */
+
+.flash_notice, .flash_error, .flash_info, .flash_warning {
+	background-repeat: no-repeat;
+	background-position: left;	
+	padding: 7px 0px 5px 20px;
+}
+
+.flash_notice {
+	background-image: url("/images/accept.png");
+	color: #008800;
+}
+
+.flash_error {
+	background-image: url("/images/exclamation.png");
+	color: #cc0000;
+}
+
+.flash_info {
+	background-image: url("/images/information.png");
+	color: #0044A8;
+}
+
+.flash_warning {
+	background-image: url("/images/error.png");
+	color: #ff9933;
+}
+
+/* end flash messages */
