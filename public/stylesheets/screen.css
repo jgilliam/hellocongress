@@ -54,7 +54,7 @@ h2, h3 {
 #search_links {
 	margin: 3px 0px 0px 2px;
 }
-#legislator_submit, #research_submit {
+#legislator_submit, #research_submit, .search_button {
 	border-right: solid 1px #BBB;
 	border-bottom: solid 1px #BBB;	
 	font-size: 1em;
@@ -67,7 +67,7 @@ input, textarea, select {
 	font-size: 1em;
 	font-family: Optima, Helvetica, Verdana, Arial, sans-serif;	
 }
-#legislator_name {
+#legislator_name, #q {
 	width: 235px;
 }
 #research_name, #research_content, #research_requester, #research_email, #research_organization, #research_issue_id {
@@ -85,7 +85,7 @@ input, textarea, select {
 	top: -2px;
 }
 
-.priority_numbers {
+.priority_numbers, #search_links {
 	font-size: 0.8em;
 }
 
@@ -279,6 +279,9 @@ ul#tabnav a:hover { /* settings for hover effect */
 /* rails forms */
 .field {
 	margin-bottom: 15px;
+}
+.field_label {
+	font-size: 0.8em;
 }
 
 .fieldWithErrors input {

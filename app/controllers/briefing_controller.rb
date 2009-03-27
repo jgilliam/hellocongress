@@ -1,0 +1,2 @@
+class BriefingController < ApplicationController
+end

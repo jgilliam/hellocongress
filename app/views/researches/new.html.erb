@@ -1,10 +1,12 @@
 <%= render :partial => "shared/nav" %>
 
-<div id="content">
 <table border="0" cellspacing="0" cellpadding="0">
 	<tr><td valign="top" width="720">
 
-		We're serious about wanting to serve you.  Let us know what research or facts you need, and we'll get right on it.  Only the <span class="red">*</span> fields are required.
+		We're serious about wanting to serve you.
+		<br/>Please let us know what research or facts you could use, and we'll get right on it.
+		<p>
+		Only the <span class="red">*</span> fields are required.
 		<p>
 		<% form_for(@research) do |f| %>
 		  <%= f.error_messages %>
@@ -60,9 +62,7 @@
 
 		<% end %>
 
-
-	</td><td valign="top" width="200" style="padding-left: 50px;">
+	</td><td valign="top" width="370" style="padding-left: 50px;">
 
 	</td></tr>
 </table>
-</div>
