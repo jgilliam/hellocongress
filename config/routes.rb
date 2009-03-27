@@ -25,7 +25,7 @@ ActionController::Routing::Routes.draw do |map|
   #     products.resources :sales, :collection => { :recent => :get }
   #   end
 
-  map.resources :legislators, :priorities, :constituents
+  map.resources :legislators, :priorities, :constituents, :researches
 
   # Sample resource route within a namespace:
   #   map.namespace :admin do |admin|

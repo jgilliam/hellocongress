@@ -1,0 +1,68 @@
+<%= render :partial => "shared/nav" %>
+
+<div id="content">
+<table border="0" cellspacing="0" cellpadding="0">
+	<tr><td valign="top" width="720">
+
+		We're serious about wanting to serve you.  Let us know what research or facts you need, and we'll get right on it.  Only the <span class="red">*</span> fields are required.
+		<p>
+		<% form_for(@research) do |f| %>
+		  <%= f.error_messages %>
+			
+			<div class="field">
+		    	<div class="field_label"><span class="red">*</span> Your name</div>
+				<div class="field_box">
+			    <%= f.text_field :requester %>
+				</div>
+			</div>
+		
+			<div class="field">
+			    <div class="field_label"><span class="red">*</span> Your email address</div>
+				<div class="field_box">
+			    <%= f.text_field :email, :title => "Your email address will be kept private, and you will only get email regarding this research request.", :class => "bt" %>
+				</div>
+			</div>
+
+			<div class="field">
+			    <div class="field_label">Your organization</div>
+				<div class="field_box">
+			    <%= f.text_field :organization %>
+				</div>
+			</div>
+			
+			<% if current_legislator %>
+			<div class="field">
+		    	<%= f.check_box :is_legislator %> I'm with <%= current_legislator.lastname_with_title.possessive %> office
+			</div>
+		 	<% end %>
+
+			<div class="field">
+			    <div class="field_label"><span class="red">*</span> Very briefly, what are you looking for?</div>
+				<div class="field_box">
+			    <%= f.text_field :name, :maxlength => 60, :size => 50 %>
+				</div>
+			</div>
+			
+			<div class="field">
+			    <div class="field_label">More detail on what you need:</div>
+				<div class="field_box">
+			    <%= f.text_area :content, :size => "45x5" %>
+				</div>
+			</div>
+
+			<div class="field">
+				<div class="field_box">
+			    <%= f.select :issue_id, Issue.more_than_three_priorities.alphabetical.all.collect {|i| [ i.name.titleize, i.id ] }, {:include_blank => 'Pick in issue'} %>
+				</div>
+			</div>
+			
+		    <%= f.submit "Submit Research Request" %>
+
+		<% end %>
+
+
+	</td><td valign="top" width="200" style="padding-left: 50px;">
+
+	</td></tr>
+</table>
+</div>

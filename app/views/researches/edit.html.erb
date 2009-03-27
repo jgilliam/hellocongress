@@ -1,0 +1,38 @@
+<h1>Editing research</h1>
+
+<% form_for(@research) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :requester %><br />
+    <%= f.text_field :requester %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :organization %><br />
+    <%= f.text_field :organization %>
+  </p>
+  <p>
+    <%= f.label :is_legislator %><br />
+    <%= f.check_box :is_legislator %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :issue_id %><br />
+    <%= f.text_field :issue_id %>
+  </p>
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>

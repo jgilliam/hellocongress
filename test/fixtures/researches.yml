@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  legislator_id: 1
+  is_legislator: false
+  name: MyString
+  email: MyString
+  issue_id: 1
+  name: MyString
+  content: MyText
+  wh2_id: 1
+  url: MyString
+  organization: MyString
+
+two:
+  legislator_id: 1
+  is_legislator: false
+  name: MyString
+  email: MyString
+  issue_id: 1
+  name: MyString
+  content: MyText
+  wh2_id: 1
+  url: MyString
+  organization: MyString

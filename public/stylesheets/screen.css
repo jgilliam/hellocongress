@@ -54,16 +54,29 @@ h2, h3 {
 #search_links {
 	margin: 3px 0px 0px 2px;
 }
-#legislator_submit {
-	border: solid 1px #ddd;
+#legislator_submit, #research_submit {
+	border-right: solid 1px #BBB;
+	border-bottom: solid 1px #BBB;	
 	font-size: 1em;
-	background-color: #EEE;
-	color: #666;
-	padding: 2px 2px 2px 2px;
+	background-color: #DDD;
+	font-weight: bold;
+	color: #000;
+	padding: 2px 4px 2px 4px;
 }
-.ac_input {
+input, textarea, select {
 	font-size: 1em;
+	font-family: Optima, Helvetica, Verdana, Arial, sans-serif;	
+}
+#legislator_name {
 	width: 235px;
+}
+#research_name, #research_content {
+	width: 400px;
+}
+
+
+.red {
+	color: #cc0000;
 }
 
 .priority_position {
@@ -263,3 +276,43 @@ ul#tabnav a:hover { /* settings for hover effect */
   color: #ddd;
 }
 /* end pagination */
+
+/* rails forms */
+.field {
+	margin-bottom: 15px;
+}
+
+.fieldWithErrors input {
+  background-color: #c00;
+  color: #FFF;
+}
+
+#errorExplanation {
+  border: 2px solid #c00;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 1em;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 1em;
+}
+
+/* end rails errors */
