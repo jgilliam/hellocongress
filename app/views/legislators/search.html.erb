@@ -1,0 +1,21 @@
+<div id="content">
+<b>Legislators matching <%= h(params[:legislator][:name]) %></b>
+<p>
+<table border="0" cellspacing="0" cellpadding="0">
+	<tr>
+	<% need = 3 %>
+	<% for legislator in @legislators %>
+		<% need -= 1 %>
+		<td valign="top" style="padding-right: 10px;" align="center"><a href="http://<%= legislator.short_name %>.<%= BASE_URL %>/priorities"><img src="http://www.govtrack.us/data/photos/<%= legislator.govtrack_id %>-100px.jpeg" width="100" border="0" /></a><br/>
+		<a href="http://<%= legislator.short_name %>.<%= BASE_URL %>/priorities"><%= legislator.name_with_title %></a>
+		<div class="priority_numbers"><%= pluralize(legislator.constituents_count,"constituent") %></div>
+		</td>
+	<% end %>
+	<% for i in 1..need %>
+		<td valign="top" style="padding-right: 10px;" width="100">
+			<div style="font-size: 100px; font-weight:bold; padding-top: 30px; text-align: center; background-color: #CCC; height: 90px;"><div style="padding-top: 25px;">?</div></div>
+		</td>
+	<% end %>
+	</tr>
+</table>
+</div>

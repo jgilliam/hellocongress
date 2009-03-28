@@ -41,7 +41,7 @@ class LegislatorsController < ApplicationController
         end
       end
       if govtrack_ids.any?
-        @legislators = Legislator.find(:all, :conditions => ["govtrack_id in (?)",govtrack_ids])
+        @legislators = Legislator.by_state.find(:all, :conditions => ["govtrack_id in (?)",govtrack_ids])
       end
     end
     respond_to do |format|
