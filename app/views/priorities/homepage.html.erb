@@ -9,7 +9,6 @@
 <link rel="alternate" type="application/rss+xml" title="Top 25 Priorities at White House 2" href="http://whitehouse2.org/priorities/top.rss">
 <style>
 body {
-	font-family: Optima, Helvetica, Verdana, Arial, sans-serif;
 	margin: 10px 0px 0px 20px;
 }
 #headline {
@@ -28,6 +27,12 @@ body {
 }
 #hp_search_button {
 	font-size: 2em;
+	border-right: solid 1px #BBB;
+	border-bottom: solid 1px #BBB;	
+	background-color: #DDD;
+	font-weight: bold;
+	color: #000;
+	padding: 2px 4px 2px 4px;	
 }
 #hp_search_links {
 	margin-top: 18px;
@@ -49,8 +54,8 @@ body {
 		<input type="submit" value="Search" id="hp_search_button">
 	</td>
 	</tr>
-	</table>
 	</form>
+	</table>
 	<div id="hp_search_links">
 		Type a legislator's name into the box, or put your address in and we'll figure it out.  <a href="http://<%= BASE_URL %><%= url_for legislators_url(:only_path => true) %>">Complete list of legislators</a>
 	</div>	

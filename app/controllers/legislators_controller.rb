@@ -21,6 +21,10 @@ class LegislatorsController < ApplicationController
   
   def search
     @q = params[:q]
+    if @q == 'Find a legislator'
+      redirect_to legislators_url
+      return
+    end
     @legislators = Legislator.search(@q)
     if @legislators.size == 1
       redirect_to @legislators[0].url
