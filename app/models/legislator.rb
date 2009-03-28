@@ -20,7 +20,7 @@ class Legislator < ActiveRecord::Base
   end
   
   def url
-    'http://' + short_name + '.' + BASE_URL + "/priorities"
+    'http://' + short_name + '.' + BASE_URL + "/"
   end
   
   def self.search(q)

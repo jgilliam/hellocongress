@@ -1,11 +1,11 @@
 <div id="content">
-<b>Legislators matching <%= h(params[:legislator][:name]) %></b>
+<b>Legislators matching <%= h(@q) %></b>
 <p>
 <table border="0" cellspacing="0" cellpadding="0">
 	<tr>
 	<% for legislator in @legislators %>
-		<td valign="top" style="padding-right: 10px;" align="center"><a href="http://<%= legislator.short_name %>.<%= BASE_URL %>/priorities"><img src="http://www.govtrack.us/data/photos/<%= legislator.govtrack_id %>-100px.jpeg" width="100" border="0" /></a><br/>
-		<a href="http://<%= legislator.short_name %>.<%= BASE_URL %>/priorities"><%= legislator.name_with_title %></a>
+		<td valign="top" style="padding-right: 10px;" align="center"><a href="<%= legislator.url %>"><img src="http://www.govtrack.us/data/photos/<%= legislator.govtrack_id %>-100px.jpeg" width="100" border="0" /></a><br/>
+		<a href="<%= legislator.url %>"><%= legislator.name_with_title %></a>
 		<div class="priority_numbers"><%= pluralize(legislator.constituents_count,"constituent") %></div>
 		</td>
 	<% end %>

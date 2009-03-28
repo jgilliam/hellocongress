@@ -4,6 +4,8 @@
 jQuery(document).ready(function() {
 	$("abbr[class*=timeago]").timeago();	
 	$("input#legislator_name").autocomplete("/legislators.js");
+	$("input#hp_search").autocomplete("/legislators.js");
+	$("input#hp_search").DefaultValue("Find a legislator") 	
 	$("input#legislator_name").DefaultValue("Find a legislator") 
 	$('input#legislator_name').bt({ 
 		positions: ['left'],

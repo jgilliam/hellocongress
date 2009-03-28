@@ -20,7 +20,7 @@ class LegislatorsController < ApplicationController
   end
   
   def search
-    @q = h(params[:legislator][:name])
+    @q = params[:q]
     @legislators = Legislator.search(@q)
     if @legislators.size == 1
       redirect_to @legislators[0].url
