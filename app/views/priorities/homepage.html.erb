@@ -21,7 +21,7 @@ body {
 	margin: 5px 0px 0px 10px;
 }
 #hp_search_box {
-	margin-top: 30px;
+	margin-top: 20px;
 }
 #hp_search {
 	font-size: 2em;
@@ -29,13 +29,8 @@ body {
 #hp_search_button {
 	font-size: 2em;
 }
-#coming {
-	font-size: 0.8em;
-	color: #999;
-	width: 820px;
-	text-align: center;
-	margin-bottom: 10px;
-	margin-top: 60px;
+#hp_search_links {
+	margin-top: 18px;
 }
 </style>
 
@@ -56,22 +51,11 @@ body {
 	</tr>
 	</table>
 	</form>
-	<div id="search_links">
-		<a href="http://<%= BASE_URL %><%= url_for legislators_url(:only_path => true) %>">Complete list of legislators</a>
+	<div id="hp_search_links">
+		Type a legislator's name into the box, or put your address in and we'll figure it out.  <a href="http://<%= BASE_URL %><%= url_for legislators_url(:only_path => true) %>">Complete list of legislators</a>
 	</div>	
 	</div>
 	
-	
-<div id="coming"></div>
-<table border="0" cellspacing="0" cellpadding="0">
-	<tr><td valign="top">
-			<a href="http://www.sunlightlabs.com/"><img src="/images/sunlightlabs-logo.png" width="303" height="80" border="0" /></a>
-		</td><td valign="top" style="padding-left: 20px; padding-right: 30px;">
-			<a href="http://whitehouse2.org/"><img src="/images/wh2-logo.png" width="176" height="120" border="0" /></a>
-		</td><td valign="top">
-			<a href="http://www.sunlightlabs.com/appsforamerica/"><img src="/images/appsforamerica-logo.png" width="266" height="80" border="0" /></a>
-		</td>
-	</tr>
-</table>
+
 </body>
 </html>
