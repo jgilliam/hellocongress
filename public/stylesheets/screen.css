@@ -56,6 +56,8 @@ h2, h3 {
 #right_column {
 	font-size: 0.8em;
 	line-height: 1.3em;
+	background-color: #f0f0f0;
+	padding: 8px 7px 1px 7px;
 }
 #legislator_submit, #research_submit, .search_button {
 	border-right: solid 1px #BBB;
@@ -73,8 +75,12 @@ input, textarea, select {
 #legislator_name, #q {
 	width: 225px;
 }
-#research_research_request, #research_content, #research_requester, #research_email, #research_organization, #research_issue_id {
-	width: 320px;
+#research_requester, #research_email, #research_organization, #research_issue_id {
+	width: 250px;
+}
+
+#research_research_request, #research_content {
+	width: 515px;
 }
 
 .red {

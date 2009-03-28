@@ -7,6 +7,10 @@ Only the <span class="red">*</span> fields are required.
 <p>
 <% form_for(@research) do |f| %>
   <%= f.error_messages :header_message => "More information needed", :message => "We need more information about your research request:" %>
+
+	<table border="0" cellspacing="0" cellpadding="0">
+		
+		<tr><td valign="top">
 	
 	<div class="field">
     	<div class="field_label"><span class="red">*</span> Your name</div>
@@ -14,6 +18,7 @@ Only the <span class="red">*</span> fields are required.
 	    <%= f.text_field :requester, :title => "This will be public, you don't need to put your full name if you don't want to.", :class => "bt" %>
 		</div>
 	</div>
+		</td><td valign="top" style="padding-left: 10px;">
 
 	<div class="field">
 	    <div class="field_label"><span class="red">*</span> Your email address</div>
@@ -21,6 +26,13 @@ Only the <span class="red">*</span> fields are required.
 	    <%= f.text_field :email, :title => "This will be kept private, and you will only get email regarding this research request.", :class => "bt" %>
 		</div>
 	</div>
+		
+		</td></tr>
+	</table>
+	
+	<table border="0" cellspacing="0" cellpadding="0">
+		
+		<tr><td valign="top">
 
 	<div class="field">
 	    <div class="field_label">Your organization</div>
@@ -29,11 +41,17 @@ Only the <span class="red">*</span> fields are required.
 		</div>
 	</div>
 	
-	<% if current_legislator %>
-	<div class="field">
-    	<%= f.check_box :is_legislator %> I'm with <%= current_legislator.lastname_with_title.possessive %> office
-	</div>
- 	<% end %>
+		</td><td valign="top" style="padding-left: 10px;">
+	
+			<% if current_legislator %>
+			<div class="field" style="padding-top: 17px;">
+		    	<%= f.check_box :is_legislator %> I'm with <%= current_legislator.lastname_with_title.possessive %> office
+			</div>
+		 	<% end %>
+
+		</td></tr>
+	</table>
+
 
 	<div class="field">
 	    <div class="field_label"><span class="red">*</span> Very briefly, what are you looking for?</div>
