@@ -58,7 +58,7 @@ namespace :wh2 do
       if wh2priorities.total_entries != legislator.priorities.size
         puts 'Processing ' + legislator.name + ' - ' + wh2priorities.total_entries.to_s
         for current_page in 1..wh2priorities.total_pages
-          wh2priorities = Wh2Endorsement.paginate(:all, :from => "/legislators/#{legislator.wh2_id}/constituents/priorities.xml", :params => {:page => current_page})
+          wh2priorities = Wh2Endorsement.paginate(:all, :from => "/legislators/#{legislator.wh2_id}/constituents/priorities.xml", :params => {:page => current_page}) if current_page > 1
           for wh2priority in wh2priorities
             position += 1
             priority = LegislatorPriority.find_or_create_by_legislator_id_and_wh2_id(legislator.id,wh2priority.priority_id)

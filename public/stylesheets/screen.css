@@ -168,7 +168,7 @@ input, textarea, select {
 /* jquery auto complete stuff */
 .ac_results {
 	padding: 0px;
-	border: 1px solid black;
+	border: 1px solid #DDD;
 	background-color: white;
 	overflow: hidden;
 	z-index: 99999;
@@ -204,12 +204,8 @@ input, textarea, select {
 	background: white url('/images/indicator.gif') right center no-repeat;
 }
 
-.ac_odd {
-	background-color: #eee;
-}
-
 .ac_over {
-	background-color: #13499b;
+	background-color: #0044A8;
 	color: white;
 }
 /* end jquery autocomplete stuff */
