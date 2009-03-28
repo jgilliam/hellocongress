@@ -21,28 +21,10 @@ class LegislatorsController < ApplicationController
   
   def search
     @q = h(params[:legislator][:name])
-    @legislators = Legislator.find(:all, :conditions => ["name LIKE ? or fullname like ?", @q,@q], :order => "name desc")
+    @legislators = Legislator.search(@q)
     if @legislators.size == 1
       redirect_to @legislators[0].url
       return
-    end
-    if @legislators.empty?
-      govtrack_ids = []
-      if @q.length == 5 # try the zip code
-        for s in Sunlight::Legislator.all_in_zipcode(@q)
-          govtrack_ids << s.govtrack_id
-        end
-      else
-        sun = Sunlight::Legislator.all_for(:address => @q)
-        if sun.size > 0
-          govtrack_ids << sun[:senior_senator].govtrack_id
-          govtrack_ids << sun[:junior_senator].govtrack_id
-          govtrack_ids << sun[:representative].govtrack_id
-        end
-      end
-      if govtrack_ids.any?
-        @legislators = Legislator.by_state.find(:all, :conditions => ["govtrack_id in (?)",govtrack_ids])
-      end
     end
     respond_to do |format|
       format.html # index.html.erb
