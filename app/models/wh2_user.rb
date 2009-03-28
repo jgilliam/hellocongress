@@ -19,7 +19,7 @@ class Wh2User < ActiveResource::Base
 
   def top_priority
     return nil unless top_endorsement_id
-    Priority.find_by_wh2_id(top_endorsement.priority_id)
+    LegislatorPriority.find_by_wh2_id(top_endorsement.priority_id)
   end
   memoize :top_priority
 

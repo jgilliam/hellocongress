@@ -1,6 +1,6 @@
 class CreatePriorities < ActiveRecord::Migration
   def self.up
-    create_table :priorities do |t|
+    create_table :legislator_priorities do |t|
       t.integer :legislator_id
       t.integer :wh2_id
       t.string :name, :limit => 60
@@ -25,11 +25,11 @@ class CreatePriorities < ActiveRecord::Migration
       t.datetime :crawled_at
       t.timestamps
     end
-    add_index :priorities, :legislator_id
-    add_index :priorities, :wh2_id
+    add_index :legislator_priorities, :legislator_id
+    add_index :legislator_priorities, :wh2_id
   end
 
   def self.down
-    drop_table :priorities
+    drop_table :legislator_priorities
   end
 end
