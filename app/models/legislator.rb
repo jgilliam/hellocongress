@@ -38,7 +38,7 @@ class Legislator < ActiveRecord::Base
       rescue
       end        
     end
-    if govtrack_ids.empty? and zip.length == 10 and zip[4] == '-' # let's try their zip9
+    if govtrack_ids.empty? and q.length == 10 and q[4] == '-' # let's try their zip9
       begin
         sun = Sunlight::Legislator.all_for(:address => q)
         if sun and sun.size > 0
