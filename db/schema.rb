@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090327010659) do
+ActiveRecord::Schema.define(:version => 20090329173918) do
 
   create_table "issues", :force => true do |t|
     t.integer  "wh2_id"
@@ -20,6 +20,37 @@ ActiveRecord::Schema.define(:version => 20090327010659) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "legislator_priorities", :force => true do |t|
+    t.integer  "legislator_id"
+    t.integer  "wh2_id"
+    t.string   "name",                   :limit => 60
+    t.string   "url",                    :limit => 150
+    t.string   "issues_list",            :limit => 200
+    t.integer  "constituents_count",                    :default => 0
+    t.integer  "endorsers_count",                       :default => 0
+    t.integer  "opposers_count",                        :default => 0
+    t.integer  "score",                                 :default => 0
+    t.integer  "points_count",                          :default => 0
+    t.integer  "documents_count",                       :default => 0
+    t.integer  "obama_status",                          :default => 0
+    t.integer  "legislator_status",                     :default => 0
+    t.integer  "position"
+    t.integer  "position_24hr"
+    t.integer  "position_24hr_change",                  :default => 0
+    t.integer  "position_7days"
+    t.integer  "position_7days_change",                 :default => 0
+    t.integer  "position_30days"
+    t.integer  "position_30days_change",                :default => 0
+    t.datetime "published_at"
+    t.datetime "crawled_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "wh2_position"
+  end
+
+  add_index "legislator_priorities", ["legislator_id"], :name => "index_priorities_on_legislator_id"
+  add_index "legislator_priorities", ["wh2_id"], :name => "index_priorities_on_wh2_id"
 
   create_table "legislators", :force => true do |t|
     t.string   "name",               :limit => 100
@@ -62,48 +93,17 @@ ActiveRecord::Schema.define(:version => 20090327010659) do
   add_index "legislators", ["short_name"], :name => "index_legislators_on_short_name"
   add_index "legislators", ["wh2_id"], :name => "index_legislators_on_wh2_id"
 
-  create_table "priorities", :force => true do |t|
-    t.integer  "legislator_id"
-    t.integer  "wh2_id"
-    t.string   "name",                   :limit => 60
-    t.string   "url",                    :limit => 150
-    t.string   "issues_list",            :limit => 200
-    t.integer  "constituents_count",                    :default => 0
-    t.integer  "endorsers_count",                       :default => 0
-    t.integer  "opposers_count",                        :default => 0
-    t.integer  "score",                                 :default => 0
-    t.integer  "points_count",                          :default => 0
-    t.integer  "documents_count",                       :default => 0
-    t.integer  "obama_status",                          :default => 0
-    t.integer  "legislator_status",                     :default => 0
-    t.integer  "position"
-    t.integer  "position_24hr"
-    t.integer  "position_24hr_change",                  :default => 0
-    t.integer  "position_7days"
-    t.integer  "position_7days_change",                 :default => 0
-    t.integer  "position_30days"
-    t.integer  "position_30days_change",                :default => 0
-    t.datetime "published_at"
-    t.datetime "crawled_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "wh2_position"
-  end
-
-  add_index "priorities", ["legislator_id"], :name => "index_priorities_on_legislator_id"
-  add_index "priorities", ["wh2_id"], :name => "index_priorities_on_wh2_id"
-
   create_table "rankings", :force => true do |t|
-    t.integer  "priority_id"
+    t.integer  "legislator_priority_id"
     t.integer  "version"
     t.integer  "position"
-    t.integer  "endorsers_count", :default => 0
-    t.integer  "opposers_count",  :default => 0
+    t.integer  "endorsers_count",        :default => 0
+    t.integer  "opposers_count",         :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "rankings", ["priority_id", "version"], :name => "index_rankings_on_priority_id_and_version"
+  add_index "rankings", ["legislator_priority_id", "version"], :name => "index_rankings_on_priority_id_and_version"
 
   create_table "researches", :force => true do |t|
     t.integer  "wh2_id"
