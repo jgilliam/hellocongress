@@ -41,13 +41,11 @@
 		</td><td valign="top" width="300" style="padding-left: 50px;">
 
 			<div id="wh2_box">
-			<a href="http://whitehouse2.org/">White House 2</a> is a bipartisan network of over 8,000 citizens imagining how the White House might work if it was run completely democratically by thousands of people over the internet.  <a href="http://whitehouse2.org/signup">All U.S. citizens can join.</a>
-			<p>
-			<div align="center">
-			<a href="http://whitehouse2.org/"><%= image_tag "wh2-logo.png", :border => 0 %></a>
-			</div>		
-			<p>We're setting <a href="http://whitehouse2.org/priorities/top">priorities</a>, collaborating on policy, and creating a massive database of <%= link_to "talking points", :controller => "briefing" %> covering all sides of every important issue facing our country.
-			<p>
+				<%= render :partial => "shared/wh2_intro" %>
+			</div>
+			
+			<div id="hc_box">
+				<%= render :partial => "shared/hc_intro" %>
 			</div>
 			
 		</td></tr>

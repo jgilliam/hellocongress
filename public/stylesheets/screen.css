@@ -53,11 +53,14 @@ h2, h3 {
 #search_links {
 	margin: 3px 0px 0px 2px;
 }
-#wh2_box, #intro_box {
+#wh2_box, #intro_box, #hc_box {
 	font-size: 0.8em;
 	line-height: 1.3em;
 	background-color: #f0f0f0;
 	padding: 8px 7px 1px 7px;
+}
+#hc_box {
+	margin-top: 20px;
 }
 #legislator_submit, #research_submit, .search_button {
 	border-right: solid 1px #BBB;

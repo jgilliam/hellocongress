@@ -74,20 +74,11 @@ body {
 	
 
 	<div id="intro_box">
-		At <b>Hello Congress</b>, every Senator and Representative gets their own site where their staff can request research, search our briefing room of over 2000 documents and talking points, and track the priorities of their constituents in one simple dashboard.
-		<p>
+		<%= render :partial => "shared/hc_intro" %>
 	</div>
 
 	<div id="wh2_box">
-	<a href="http://whitehouse2.org/">White House 2</a> is a bipartisan network of over 8,000 citizens imagining how the White House might work if it was run completely democratically by thousands of people over the internet.  <a href="http://whitehouse2.org/signup">All U.S. citizens can join.</a>
-	<p>
-	<div align="center">
-	<a href="http://whitehouse2.org/"><%= image_tag "wh2-logo.png", :border => 0 %></a>
-	</div>		
-	<p>We're setting <a href="http://whitehouse2.org/priorities/top">priorities</a>, collaborating on policy, and creating a massive database of <%= link_to "talking points", :controller => "briefing" %> covering all sides of every important issue facing our country.
-	<p>
-	</div>
-	
+		<%= render :partial => "shared/wh2_intro" %>
 	</div>
 	
 
