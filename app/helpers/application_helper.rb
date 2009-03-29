@@ -32,4 +32,13 @@ module ApplicationHelper
     "contributed " + r.to_sentence
   end
 
+  def legislator_websites(legislator)
+    r = []
+    r << '<a href="http://twitter.com/' + legislator.twitter_id + '">Twitter</a>' if legislator.attribute_present?("twitter_id")
+    r << '<a href="' + legislator.congresspedia_url + '">OpenCongress</a>' if legislator.attribute_present?("congresspedia_url")
+    r << '<a href="http://www.govtrack.us/congress/person.xpd?id=' + legislator.govtrack_id.to_s + '">GovTrack</a>' if legislator.attribute_present?("govtrack_id")
+    r << '<a href="' + legislator.youtube_url + '">YouTube</a>' if legislator.attribute_present?("youtube_url")
+    r.to_sentence + "."
+  end
+
 end

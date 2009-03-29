@@ -40,6 +40,25 @@
 
 		</td><td valign="top" width="300" style="padding-left: 50px;">
 
+			<div id="legislator_info">
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tr><td valign="top">
+						<img src="http://www.govtrack.us/data/photos/<%= current_legislator.govtrack_id %>-50px.jpeg" width="50" border="0" align="left" />
+ 						</td><td valign="top" style="padding-left: 8px;">
+							<% if current_legislator.attribute_present?("webform") %>
+								<a href="<%= current_legislator.webform %>"><%= current_legislator.name_with_title %></a> <span class="party"><%= current_legislator.party %>-<%= current_legislator.state %></span><br/>
+							<% else %>
+								<%= current_legislator.name_with_title %> <span class="party"><%= current_legislator.party %>-<%= current_legislator.state %></span><br/>
+							<% end %>
+							<% if current_legislator.attribute_present?("phone") %>
+								<%= current_legislator.phone %><br/>
+							<% end %>
+							<%= legislator_websites(current_legislator) %>
+						</td>
+					</tr>
+				</table>
+			</div>
+
 			<div id="wh2_box">
 				<%= render :partial => "shared/wh2_intro" %>
 			</div>

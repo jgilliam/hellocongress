@@ -59,6 +59,13 @@ h2, h3 {
 	background-color: #f0f0f0;
 	padding: 8px 7px 1px 7px;
 }
+#legislator_info {
+	margin-bottom: 20px;
+}
+#legislator_info td {
+	font-size: 0.8em;
+	line-height: 1.3em;
+}
 #hc_box {
 	margin-top: 20px;
 }
@@ -88,6 +95,8 @@ input, textarea, select {
 
 .red {
 	color: #cc0000;
+}
+.party {
 }
 
 .priority_position {
