@@ -1,26 +1,38 @@
-<table border="0" cellspacing="0" cellpadding="0">
-	<% for user in @constituents %>
-		<tr><td valign="top">
-			<%= render :partial => "shared/user_pic", :locals => {:user => user} %>
-			</td><td valign="top">
-				<div class="user_name">
-				<a href="<%= user.url %>"><%= user.login %></a>
-				<span class="pc"><%= user.capitals_count %>pc</span>
-				<%= revisions_sentence(user) %>
-				<% if user.top_priority %>
-					<div class="user_priority">
-					#1 priority:
-					<% if user.top_endorsement.is_down? %><span class="opposed">opposing</span><% end %>
-					<a href="<%= user.top_priority.url %>"><%= user.top_priority.name %></a>.
+<% if @constituents.empty? %>
+
+	<div class="small_content">
+	None of your constituents are members of White House 2 yet. We're still new, give us time!
+	<p>You can still tap into our network and <%= link_to "request research", new_research_url %>, or search our <%= link_to "briefing room", :controller => "briefing" %>.
+	</div>
+	
+<% else %>
+
+	<%= @constituents.total_entries %> of your constituents are members of White House 2.
+	<p>
+	<table border="0" cellspacing="0" cellpadding="0">
+		<% for user in @constituents %>
+			<tr><td valign="top">
+				<%= render :partial => "shared/user_pic", :locals => {:user => user} %>
+				</td><td valign="top">
+					<div class="user_name">
+					<a href="<%= user.url %>"><%= user.login %></a>
+					<span class="pc"><%= user.capitals_count %>pc</span>
+					<%= revisions_sentence(user) %>
+					<% if user.top_priority %>
+						<div class="user_priority">
+						#1 priority:
+						<% if user.top_endorsement.is_down? %><span class="opposed">opposing</span><% end %>
+						<a href="<%= user.top_priority.url %>"><%= user.top_priority.name %></a>.
+						</div>
+					<% end %>					
 					</div>
-				<% end %>					
-				</div>
-			</td>
+				</td>
+			</tr>
+		<% end %>
 		</tr>
-	<% end %>
-	</tr>
-</table>
+	</table>
 
-<p>
-<%= will_paginate(@constituents) %>
+	<p>
+	<%= will_paginate(@constituents) %>
 
+<% end %>

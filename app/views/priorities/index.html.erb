@@ -1,3 +1,11 @@
+<% if @priorities.empty? %>
+
+<div class="small_content">
+None of your constituents are members of White House 2 yet. We're still new, give us time!
+<p>You can still tap into our network and <%= link_to "request research", new_research_url %>, or search our <%= link_to "briefing room", :controller => "briefing" %>.
+</div>
+
+<% else %>
 <table border="0" cellspacing="0" cellpadding="0">
 	<tr>
 		<td align="right" style="padding-right: 5px;"><span class="table_header">Rank</span></td>
@@ -28,3 +36,5 @@
 <div class="xml_footer">
 These priorities are also available in <span style="position:relative; top: 2px;"><%= image_tag "feed-icon-14x14.png", :size => "14x14" %></span> <%= link_to "RSS", :format => "rss" %> and <%= link_to "XML", :format => "xml" %>.
 </div>
+
+<% end %>
