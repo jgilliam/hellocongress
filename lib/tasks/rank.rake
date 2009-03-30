@@ -8,8 +8,10 @@ namespace :rank do
     
     for legislator in Legislator.all
       
+      puts legislator.name
+      
       v_24hr = legislator.rankings.maximum(:version, :conditions => "rankings.created_at < date_add(now(), INTERVAL -1 DAY)")
-      v_7days = legislator.rankings.maximum(:version, :conditions => "rankings.created_at < date_add(now(), INTERVAL -7 DAY)")
+      v_7days = legislator.rankings.maximum(:version, :conditions => "rankings.created_at < date_add(now(), INTERVAL -6 DAY)")
       v_30days = legislator.rankings.maximum(:version, :conditions => "rankings.created_at < date_add(now(), INTERVAL -30 DAY)")
         
       for p in legislator.priorities.by_score
