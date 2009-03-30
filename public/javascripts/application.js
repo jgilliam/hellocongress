@@ -7,7 +7,19 @@ jQuery(document).ready(function() {
 	$("input#hp_search").autocomplete("/legislators.js");
 	$("input#hp_search").DefaultValue("Find a legislator's page") 	
 	$("input#legislator_name").DefaultValue("Find a legislator's page") 
+	$("input#subscription_email").DefaultValue("Your email address	")
 	$('input#legislator_name').bt({ 
+		positions: ['left'],
+		padding: 10,
+		width: 140,
+		spikeLength: 20,
+		spikeGirth: 20,
+		cornerRadius: 20,
+		fill: '#ffff99',
+		strokeWidth: 1,
+		strokeStyle: '#ffcc00',
+	});	
+	$('input#subscription_email').bt({ 
 		positions: ['left'],
 		padding: 10,
 		width: 140,

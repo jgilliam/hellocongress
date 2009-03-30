@@ -1,0 +1,4 @@
+<% form_for(:subscription, :url => remove_subscriptions_url) do |f| %>
+  <%= f.error_messages %>
+  <%= f.text_field :email %> <%= f.submit "Unsubscribe" %>
+<% end %>

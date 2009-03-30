@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  legislator_id: 1
+  email: MyString
+  sent_at: 2009-03-30 12:20:22
+
+two:
+  legislator_id: 1
+  email: MyString
+  sent_at: 2009-03-30 12:20:22

@@ -1,0 +1,13 @@
+<div class="heading">Track changes on these priorities</div>
+<% form_for(subscription) do |f| %>
+<%= f.error_messages :header_message => "Please double check your email address" %>
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr><td valign="top">
+		<%= f.text_field :email, :size => 20, :title => "Get a weekly email update on changes in these priorities" %>
+	</td><td valign="top" style="padding-left: 5px;">
+		<%= f.submit "Subscribe" %>
+	</td>
+	</tr>
+<% end %>
+</table>
+

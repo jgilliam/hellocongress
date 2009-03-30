@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090329173918) do
+ActiveRecord::Schema.define(:version => 20090330192022) do
 
   create_table "issues", :force => true do |t|
     t.integer  "wh2_id"
@@ -123,5 +123,13 @@ ActiveRecord::Schema.define(:version => 20090329173918) do
   add_index "researches", ["issue_id"], :name => "index_researches_on_issue_id"
   add_index "researches", ["legislator_id"], :name => "index_researches_on_legislator_id"
   add_index "researches", ["wh2_id"], :name => "index_researches_on_wh2_id"
+
+  create_table "subscriptions", :force => true do |t|
+    t.integer  "legislator_id"
+    t.string   "email",         :limit => 100
+    t.datetime "sent_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

@@ -62,6 +62,12 @@
 					</tr>
 				</table>
 			</div>
+			
+			<% if params[:controller] != 'subscriptions' %>
+				<div id="subscribe_box">
+					<%= render :partial => "subscriptions/form", :locals => {:subscription => Subscription.new} %>
+				</div>
+			<% end %>
 
 			<div id="wh2_box">
 				<%= render :partial => "shared/wh2_intro" %>

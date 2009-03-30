@@ -6,6 +6,7 @@ class Legislator < ActiveRecord::Base
   has_many :priorities, :class_name => "LegislatorPriority"
   has_many :rankings, :through => :priorities
   has_many :researches
+  has_many :subscriptions
     
   def to_param
     "#{id}-#{name.gsub(/[^a-z0-9]+/i, '-').downcase}"

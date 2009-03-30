@@ -33,9 +33,13 @@ h2, h3 {
 	margin: 0px 0px 5px 0px;
 }
 
-#header {
+#subscribe_box {
+	margin-bottom: 20px;
 }
-
+#subscription_email {
+	font-size: 1em;
+	width: 200px;
+}
 #tagline {
 	margin: 0px 0px 5px 3px;
 }
@@ -72,7 +76,7 @@ h2, h3 {
 #hc_box {
 	margin-top: 20px;
 }
-#legislator_submit, #research_submit, .search_button {
+#legislator_submit, #research_submit, .search_button, #subscription_submit {
 	border-right: solid 1px #BBB;
 	border-bottom: solid 1px #BBB;	
 	font-size: 1em;

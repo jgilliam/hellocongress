@@ -26,6 +26,7 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   map.resources :legislators, :collection => {:search => :get}
+  map.resources :subscriptions, :collection => {:unsubscribe => :get, :remove => :post}
   map.resources :priorities, :constituents, :researches
 
   # Sample resource route within a namespace:
@@ -36,6 +37,9 @@ ActionController::Routing::Routes.draw do |map|
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   map.root :controller => "priorities"
+  
+  map.connect '/unsubscribe', :controller => "subscriptions", :action => "unsubscribe"
+  map.connect '/subscribe', :controller => "subscriptions", :action => "new"
 
   # See how all your routes lay out with "rake routes"
 
