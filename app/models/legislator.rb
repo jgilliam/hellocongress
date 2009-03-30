@@ -25,7 +25,7 @@ class Legislator < ActiveRecord::Base
   end
   
   def tweet
-    '@' + twitter_id + ' meet your constituents, we want to help!  http://' + short_name + '.hellocongress.org/'
+    "@" + twitter_id + " check out your constituents' priorities at http://" + short_name + ".hellocongress.org/"
   end
   
   def self.search(q)
