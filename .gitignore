@@ -2,4 +2,4 @@
 log/*
 tmp/**/*
 config/database.yml
-
+config/hc.yml

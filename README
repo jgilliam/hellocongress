@@ -10,7 +10,7 @@ git clone git://github.com/jgilliam/hellocongress.git
 git submodule init
 git submodule update
 
-You will need to copy database.yml.dist to database.yml and set your database settings like you would any Rails app.
+You will need to copy database.yml.dist to database.yml and set your database settings like you would any Rails app.  Also copy hc.yml.dist to hc.yml and add in your own Google Analytics code, etc.
 
 This will create the database, run the migrations, and set up the initial data:
 
