@@ -26,6 +26,9 @@ a:hover {
 h1 {
 	margin: 0px;
 }
+#header a {
+	color: #000;
+}
 h2, h3 {
 	margin: 0px 0px 5px 0px;
 }
@@ -97,6 +100,10 @@ input, textarea, select {
 	color: #cc0000;
 }
 .party {
+}
+.state {
+	font-weight: bold;
+	margin-top: 10px;
 }
 
 .priority_position {
