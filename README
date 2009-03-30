@@ -1,5 +1,24 @@
-Hello Congress tells members of Congress what their constituent's priorities are. A mashup of White House 2 (http://whitehouse2.org/) and the Sunlight Labs API (http://wiki.sunlightlabs.com/Sunlight_API_Documentation).
+Hello Congress tells members of Congress what their constituent's priorities are, and encourages staffers to request research from their constituents.
 
-This is a brand new project as of Friday March 20th.  The goal is to have it live before the Apps for America contest deadline on March 31st.
+This is built with Ruby on Rails and uses the White House 2 API (http://whitehouse2.org/) for the priorities, and the Sunlight Labs API for legislator information. 
 
-http://hellocongress.org/
+It's live here:  http://hellocongress.org/
+
+To install:
+
+git clone git://github.com/jgilliam/hellocongress.git
+git submodule init
+git submodule update
+
+You will need to copy database.yml.dist to database.yml and set your database settings like you would any Rails app.
+
+This will create the database, run the migrations, and set up the initial data:
+
+rake db:create db:migrate
+rake sunlight:legislators wh2:legislators wh2:issues
+
+Then you need to run these two rake tasks once day to keep the priorities for each legislator up to date, and track how it's changing over time.
+
+rake wh2:priorities rank:priorities
+
+That should be it, feel free to contact me if you have any problems.   Mostly the code is useful as an example for how you could use the White House 2 API with ActiveResource.   It uses dweinand's version of will_paginate to handle pagination with ActiveResource.  When you run the git submodule commands, it will load up that for you as well.
