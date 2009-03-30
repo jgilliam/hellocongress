@@ -3,12 +3,13 @@
 
 jQuery(document).ready(function() {
 	$("abbr[class*=timeago]").timeago();	
-	$("input#legislator_name").autocomplete("/legislators.js");
+	$("input.legislator_name").autocomplete("/legislators.js");
 	$("input#hp_search").autocomplete("/legislators.js");
 	$("input#hp_search").DefaultValue("Find a legislator's page") 	
-	$("input#legislator_name").DefaultValue("Find a legislator's page") 
-	$("input#subscription_email").DefaultValue("Your email address	")
-	$('input#legislator_name').bt({ 
+	$("input.legislator_name").DefaultValue("Find a legislator's page") 
+	$("input.legislator_name_search").DefaultValue("Your full address") 	
+	$("input#subscription_email").DefaultValue("Your email address")
+	$('input.legislator_name').bt({ 
 		positions: ['left'],
 		padding: 10,
 		width: 140,

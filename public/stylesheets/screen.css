@@ -89,7 +89,7 @@ input, textarea, select {
 	font-size: 1em;
 	font-family: Optima, Helvetica, Verdana, Arial, sans-serif;	
 }
-#legislator_name, #q {
+.legislator_name, .legislator_name_search, #q {
 	width: 225px;
 }
 #research_requester, #research_email, #research_organization, #research_issue_id {
