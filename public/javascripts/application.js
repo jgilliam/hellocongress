@@ -52,4 +52,15 @@ jQuery(document).ready(function() {
 		strokeWidth: 1,
 		strokeStyle: '#ffcc00',
 	});
+	$('#legislator_info').bt({ 
+		positions: ['bottom'],
+		padding: 10,
+		width: 180,
+		spikeLength: 10,
+		spikeGirth: 20,
+		cornerRadius: 20,
+		fill: '#ffff99',
+		strokeWidth: 1,
+		strokeStyle: '#ffcc00',
+	});	
 });

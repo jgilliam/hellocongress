@@ -23,6 +23,10 @@ class Legislator < ActiveRecord::Base
     'http://' + short_name + '.' + BASE_URL + "/"
   end
   
+  def tweet
+    '@' + twitter_id + ' meet your constituents, we want to help!  http://' + short_name + '.hellocongress.org/'
+  end
+  
   def self.search(q)
     legislators = Legislator.find(:all, :conditions => ["name LIKE ? or fullname like ?", "%#{q}%","%#{q}%"], :order => "name desc")
     return legislators if legislators.any?
