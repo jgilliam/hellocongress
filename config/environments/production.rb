@@ -3,6 +3,7 @@
 # The production environment is meant for finished, "live" apps.
 # Code is not reloaded between requests
 config.cache_classes = true
+config.cache_store = :mem_cache_store, 'localhost:11211'
 
 # Enable threaded mode
 # config.threadsafe!

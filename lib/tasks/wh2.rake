@@ -51,7 +51,12 @@ namespace :wh2 do
   task :priorities => :environment do
     for legislator in Legislator.all
       wh2leg = Wh2Legislator.find(legislator.wh2_id)
-      legislator.update_attribute(:constituents_count, wh2leg.constituents_count) if wh2leg.constituents_count != legislator.constituents_count
+      if wh2leg.constituents_count != legislator.constituents_count
+        legislator.update_attribute(:constituents_count, wh2leg.constituents_count) 
+        for i in 1..10
+          Rails.cache.delete('views/' + legislator.short_name + '-constituents-' + i.to_s)
+        end
+      end
       legislator.update_attribute(:short_name, wh2leg.short_name) if wh2leg.short_name != legislator.short_name
       position = 0
       wh2priorities = Wh2Endorsement.paginate(:all, :from => "/legislators/#{legislator.wh2_id}/constituents/priorities.xml", :params => {:page => 1})
