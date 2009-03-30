@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title><%= @page_title || "Hello, Congress." %></title>
+	<%= render :partial => "shared/javascripts" %>
+</head>
+<body>
+
+<div align="center">
+<div id="container">
+
+	<div id="search_form">
+	<%= render :partial => "legislators/form" %>
+	</div>
+
+	<div id="header">
+		<h1>Hello Congress,</h1>
+		<div id="tagline">We're your constituents, and we're here to serve <i>you</i>.</div>
+	</div>
+	
+	<%= flash_div :warning, :notice, :error %>
+	
+	<div id="content">
+	<table border="0" cellspacing="0" cellpadding="0">
+		<tr><td valign="top" width="600">
+
+			<%= yield :layout %>
+
+		</td><td valign="top" width="300" style="padding-left: 50px;">
+
+			<div id="wh2_box">
+				<%= render :partial => "shared/wh2_intro" %>
+			</div>
+			
+			<div id="hc_box">
+				<%= render :partial => "shared/hc_intro" %>
+			</div>			
+			
+		</td></tr>
+	</table>
+	</div>
+
+</div>
+</div>
+
+</body>
+</html>
