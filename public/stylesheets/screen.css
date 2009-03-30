@@ -113,10 +113,12 @@ input, textarea, select {
 	top: -2px;
 }
 
-.priority_numbers, #search_links {
+.priority_numbers, #search_links, .research_numbers {
 	font-size: 0.8em;
 }
-
+.research_content {
+	font-size: 0.9em;
+}
 .small_content {
 	font-size: 0.9em;
 	line-height: 1.3em;

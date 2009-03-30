@@ -1,53 +1,5 @@
-<p>
-  <b>Legislator:</b>
-  <%=h @research.legislator_id %>
-</p>
+<%= render :partial => "researches/show", :locals => {:research => @research} %>
 
-<p>
-  <b>Is legislator:</b>
-  <%=h @research.is_legislator %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%=h @research.name %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%=h @research.email %>
-</p>
-
-<p>
-  <b>Issue:</b>
-  <%=h @research.issue_id %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%=h @research.name %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%=h @research.content %>
-</p>
-
-<p>
-  <b>Wh2:</b>
-  <%=h @research.wh2_id %>
-</p>
-
-<p>
-  <b>Url:</b>
-  <%=h @research.url %>
-</p>
-
-<p>
-  <b>Organization:</b>
-  <%=h @research.organization %>
-</p>
-
-
-<%= link_to 'Edit', edit_research_path(@research) %> |
-<%= link_to 'Back', researches_path %>
+<% if current_legislator %>
+<p>Would you like to <%= link_to "request more research", :action => "new" %>?
+<% end %>

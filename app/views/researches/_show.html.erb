@@ -1,0 +1,7 @@
+<div class="research_name"><% if research.attribute_present?("issue_id") %><%=h research.issue.name.titleize %>: <% end %><b><%= h(research.name) %></b></div>
+<div class="research_content">
+<%= simple_format(h(research.content)) %>
+</div>
+<div class="research_numbers">
+Requested by <%= h(research.requester) %><% if research.attribute_present?("organization") %> (<%= h(research.organization) %>)<% end %><% if research.is_legislator %> - a member of <%= research.legislator.name_with_title.possessive %> staff<% end %>
+</div>

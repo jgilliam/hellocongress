@@ -38,6 +38,8 @@ We don't expect to solve these problems overnight, but with your help, we will f
 <div class="small_content">
 The site was built with <a href="http://rubyonrails.org/">Ruby on Rails</a> and uses the White House 2 API for the priorities, and the <a href="http://services.sunlightlabs.com/api/">Sunlight Labs API</a> for legislator information and address lookup.  The source code is <a href="http://github.com/jgilliam/hellocongress/tree/master">available on github</a>, and is a good example for developers wishing to get started with any of those technologies.
 <p>
+Each legislator's priorities are available in <span style="position:relative; top: 2px;"><%= image_tag "feed-icon-14x14.png", :size => "14x14" %></span> RSS and XML, you just add "/priorities.rss" or "/priorities.xml" to the URL and "?page=2" will you let you page through the results.
+<br/>All research requests are available via <span style="position:relative; top: 2px;"><%= image_tag "feed-icon-14x14.png", :size => "14x14" %></span> <a href="http://<%= BASE_URL %>/researches.rss">RSS</a> and <a href="http://<%= BASE_URL %>/researches.xml">XML</a> as well.
 </div>
 
 <b>Acknowledgements</b>

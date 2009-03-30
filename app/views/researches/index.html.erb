@@ -1,38 +1,7 @@
-<h1>Listing researches</h1>
-
-<table>
-  <tr>
-    <th>Legislator</th>
-    <th>Is legislator</th>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Issue</th>
-    <th>Name</th>
-    <th>Content</th>
-    <th>Wh2</th>
-    <th>Url</th>
-    <th>Organization</th>
-  </tr>
 
 <% for research in @researches %>
-  <tr>
-    <td><%=h research.legislator_id %></td>
-    <td><%=h research.is_legislator %></td>
-    <td><%=h research.name %></td>
-    <td><%=h research.email %></td>
-    <td><%=h research.issue_id %></td>
-    <td><%=h research.name %></td>
-    <td><%=h research.content %></td>
-    <td><%=h research.wh2_id %></td>
-    <td><%=h research.url %></td>
-    <td><%=h research.organization %></td>
-    <td><%= link_to 'Show', research %></td>
-    <td><%= link_to 'Edit', edit_research_path(research) %></td>
-    <td><%= link_to 'Destroy', research, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+
+	<%= render :partial => "researches/show", :locals => {:research => research} %>
+	<p>
+
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New research', new_research_path %>
