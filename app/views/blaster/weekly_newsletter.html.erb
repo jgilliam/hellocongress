@@ -1,0 +1,13 @@
+Here is how the top <%= @priorities.size %> priorities of <%= @legislator.lastname_with_title.possessive %> constituents changed this week.
+
+<% for p in @priorities -%>
+<%= p.position %>. <%= p.name %><% if p.position_7days_change > 0 -%>, up <%= pluralize(p.position_7days_change.abs, "position") %><% elsif p.position_7days_change < 0 -%>, down <%= pluralize(p.position_7days_change.abs, "position") %><% end %>
+<% end -%>
+
+You can also see the priorities more popular with <%= @legislator.lastname_with_title.possessive %> constituents than the rest of the country here:
+
+http://<%= @legislator.short_name %>.hellocongress.org/priorities/more_popular
+
+---
+This is an automated weekly update from Hello Congress sent to <%= @email %>.
+You can stop receiving this email here: http://hellocongress.org/unsubscribe
