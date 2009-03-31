@@ -8,20 +8,15 @@ None of your constituents are members of White House 2 yet. We're still new, giv
 <% else %>
 
 <div class="small_content">
-	Here are the priorities of your <%= pluralize(current_legislator.constituents_count, "constituent") %>, sorted into one list for easy tracking.<br/>The arrows indicate how it is moving up or down in the list over the past week and month.
+	Here are the priorities <i><b>more popular</b></i> with your <%= pluralize(current_legislator.constituents_count, "constituent") %> than the rest of the country.  These could be good priorities to lead on.
 </div>
-
-<% if current_legislator.constituents_count > 4 %>
-	<div class="smaller_content">
-	<p>Also see priorities <%= link_to "more popular", more_popular_priorities_url %> with your constituents or <%= link_to "less popular", less_popular_priorities_url %> than the rest of the country.
-	</div>
-<% end %>
-
+<div class="smaller_content">
+	<p>Also see priorities <%= link_to "less popular", less_popular_priorities_url %> with your constituents, or <%= link_to "all priorities", priorities_url %>.	
+</div>
 <table border="0" cellspacing="0" cellpadding="0">
 	<tr>
-		<td align="right" style="padding-right: 5px;"><span class="table_header">Rank</span></td>
-		<td style="padding-left: 3px;"><span class="table_header">Wk</span></td>
-		<td style="padding-left: 3px;"><span class="table_header">Mo</span></td>
+		<td align="right" style="padding-right: 12px;"><span class="table_header">Rank</span></td>
+		<td colspan="2">&nbsp;</td>
 	</tr>
 <% for priority in @priorities %>
 	<tr>
@@ -30,7 +25,11 @@ None of your constituents are members of White House 2 yet. We're still new, giv
 			<%= priority.position %>	
 			</div>
 		</td>
-		<%= render :partial => "priorities/rank_yday_month", :locals => {:priority => priority} %>
+		<td valign="top" align="right">
+			<div class="gainer">
+			+<%= number_to_percentage(priority.national_difference*100, :precision => 0) %>	
+			</div>
+		</td>		
 		<td valign="top" style="padding-bottom: 5px; padding-left: 5px;">
 			<div class="priority_name"><a href="<%= priority.url %>"><%= priority.name %></a></div>
 			<div class="priority_numbers">

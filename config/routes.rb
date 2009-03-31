@@ -27,7 +27,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :legislators, :collection => {:search => :get}
   map.resources :subscriptions, :collection => {:unsubscribe => :get, :remove => :post}
-  map.resources :priorities, :constituents, :researches
+  map.resources :priorities, :collection => {:more_popular => :get, :less_popular => :get}
+  map.resources :constituents, :researches
 
   # Sample resource route within a namespace:
   #   map.namespace :admin do |admin|

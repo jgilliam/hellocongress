@@ -103,8 +103,18 @@ input, textarea, select {
 .red {
 	color: #cc0000;
 }
-.party {
+
+.gainer {
+	color: #009933;
+	font-weight: bold;
+	font-size: 1em;
 }
+.loser {
+	color: #cc0000;
+	font-weight: bold;
+	font-size: 1em;
+}
+
 .state {
 	font-weight: bold;
 	margin-top: 10px;
@@ -125,6 +135,10 @@ input, textarea, select {
 }
 .small_content {
 	font-size: 0.9em;
+	line-height: 1.3em;
+}
+.smaller_content {
+	font-size: 0.8em;
 	line-height: 1.3em;
 }
 
