@@ -3,8 +3,8 @@ class LegislatorPriority < ActiveRecord::Base
   named_scope :by_score, :order => "score desc"
   named_scope :by_position, :order => "position asc"
   named_scope :no_constituents, :conditions => "constituents_count = 0"
-  named_scope :more_popular, :conditions => "wh2_position > 0 and wh2_position-position > 0", :order => "(wh2_position-position)/wh2_position desc"
-  named_scope :less_popular, :conditions => "wh2_position > 0 and wh2_position-position < 0", :order => "(wh2_position-position)/wh2_position asc"
+  named_scope :more_popular, :conditions => "wh2_position > 0 and endorsers_count > 1 and wh2_position-position > 0", :order => "(wh2_position-position)/wh2_position desc"
+  named_scope :less_popular, :conditions => "wh2_position > 0 and endorsers_count > 1 and wh2_position-position < 0", :order => "(wh2_position-position)/wh2_position asc"
 
   belongs_to :legislator
   has_many :rankings
