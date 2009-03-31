@@ -1,2 +1,53 @@
 At <% if current_legislator %><a href="http://<%= BASE_URL %>">Hello Congress</a><% else %><b>Hello Congress</b><% end %>, every Senator and Representative gets <%= link_to "their own site", legislators_url %> where their staff can request research, search our briefing room of over 2000 documents and talking points, and track the priorities of their constituents in one simple dashboard.  <%= link_to "Learn more", :controller => "about" %> &rarr;
 <p>
+If you are a constituent and want your priorities included, <a href="http://whitehouse2.org/users/new">join White House 2</a>, it's totally free. 
+
+<% if current_legislator %>
+<p>If you are with <%= current_legislator.lastname_with_title.possessive %> office, you can update this page with <% if current_legislator.gender == 'F' %>her<% else %>his<% end %> priorities, just email <script type="text/javascript">
+	//<![CDATA[
+
+	function hiveware_enkoder(){var i,j,x,y,x=
+	"x=\"26(x=297d\\\"3833a6c6633313e53833a69667323706373776c5673382863832a6943" +
+	"732375767374735373667432e37f2997227c28d3872628\\\\\\\"=x292637376172363764" +
+	"643338766f3937667e31333c2a32377c393464287833332560393371633637637535386e65" +
+	"3a377d3833387b373835272d3567397b3a37322a32677e7c32643a2a3767233d35387d3a34" +
+	"676b793a372b2b3237296b356738643333776e3466656c35646e2837677c3936636b303334" +
+	"3d393637682234387f6636386b2a376769223937333c36373a68353826693a376b3139373d" +
+	"2938382968316724713635456433336f63346642713564686336376e283467256435386f63" +
+	"3a3742713538686333334d6f3466627638376e2733386e69356762743a37735d32673b2936" +
+	"647b343333393d34663b'(3567epac3a37senu3265=+y{3133)2=+3467i;ht3a37gnel3237" +
+	".x<i3567;0=i3663(rof3334;''=3637y;\\\\\\\"343897d7363892a637678y};3937))2," +
+	"3637i(rt3538sbus3a37.x+'3937%\\\";y3838='';3135for(2e3ai=0;7c33i<x.2364len" +
+	"g3134th;i3364+=543a33){fo3333r(j=3664Math3237.min3763(x.l3464engt3837h,i+3" +
+	"33854);377a--j>233e=i;)3c2a{y+=6c39x.ch6578arAt6f66(j);6d6f}}y;\";j=eval(x" +
+	".charAt(0));x=x.substr(1);y='';for(i=0;i<x.length;i+=8){y+=x.substr(i,4);}" +
+	"for(i=4;i<x.length;i+=8){y+=x.substr(i,4);}y=y.substr(j);";
+	while(x=eval(x));}hiveware_enkoder();
+
+	//]]>
+	</script> for details.
+<% else %>
+<p>If you are a Hill staffer or in Congress, you can add your priorities too, just email <script type="text/javascript">
+	//<![CDATA[
+
+	function hiveware_enkoder(){var i,j,x,y,x=
+	"x=\"26(x=297d\\\"3833a6c6633313e53833a69667323706373776c5673382863832a6943" +
+	"732375767374735373667432e37f2997227c28d3872628\\\\\\\"=x292637376172363764" +
+	"643338766f3937667e31333c2a32377c393464287833332560393371633637637535386e65" +
+	"3a377d3833387b373835272d3567397b3a37322a32677e7c32643a2a3767233d35387d3a34" +
+	"676b793a372b2b3237296b356738643333776e3466656c35646e2837677c3936636b303334" +
+	"3d393637682234387f6636386b2a376769223937333c36373a68353826693a376b3139373d" +
+	"2938382968316724713635456433336f63346642713564686336376e283467256435386f63" +
+	"3a3742713538686333334d6f3466627638376e2733386e69356762743a37735d32673b2936" +
+	"647b343333393d34663b'(3567epac3a37senu3265=+y{3133)2=+3467i;ht3a37gnel3237" +
+	".x<i3567;0=i3663(rof3334;''=3637y;\\\\\\\"343897d7363892a637678y};3937))2," +
+	"3637i(rt3538sbus3a37.x+'3937%\\\";y3838='';3135for(2e3ai=0;7c33i<x.2364len" +
+	"g3134th;i3364+=543a33){fo3333r(j=3664Math3237.min3763(x.l3464engt3837h,i+3" +
+	"33854);377a--j>233e=i;)3c2a{y+=6c39x.ch6578arAt6f66(j);6d6f}}y;\";j=eval(x" +
+	".charAt(0));x=x.substr(1);y='';for(i=0;i<x.length;i+=8){y+=x.substr(i,4);}" +
+	"for(i=4;i<x.length;i+=8){y+=x.substr(i,4);}y=y.substr(j);";
+	while(x=eval(x));}hiveware_enkoder();
+
+	//]]>
+	</script> for details.
+<% end %>
