@@ -5,7 +5,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title><%= @page_title || "Hello, Congress." %></title>
-	<%= render :partial => "shared/javascripts" %>
+	<%= stylesheet_link_tag "screen","jquery.bt" %>
 </head>
 <body>
 
@@ -52,6 +52,7 @@
 </div>
 </div>
 
+<%= render :partial => "shared/javascripts" %>
 <%= render :partial => "shared/analytics" %>
 
 </body>

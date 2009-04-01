@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <title>Hello, Congress.</title>
-<%= render :partial => "shared/javascripts" %>
+<%= stylesheet_link_tag "screen","jquery.bt" %>
 <link rel="alternate" type="application/rss+xml" title="Top 25 Priorities at White House 2" href="http://whitehouse2.org/priorities/top.rss">
 <style>
 body {
@@ -80,6 +80,7 @@ body {
 		<%= render :partial => "shared/wh2_intro" %>
 	</div>
 	
+	<%= render :partial => "shared/javascripts" %>
 	<%= render :partial => "shared/analytics" %>
 
 </body>
