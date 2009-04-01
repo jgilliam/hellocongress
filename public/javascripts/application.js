@@ -2,7 +2,6 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 jQuery(document).ready(function() {
-	$("abbr[class*=timeago]").timeago();	
 	$("input.legislator_name").autocomplete("/legislators.js");
 	$("input#hp_search").autocomplete("/legislators.js");
 	$("input#hp_search").DefaultValue("Find a legislator's page") 	
