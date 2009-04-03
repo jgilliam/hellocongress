@@ -4,7 +4,7 @@ class ResearchesController < ApplicationController
   # GET /researches.xml
   def index
     @page_title = "Hello Congress research requests"
-    @researches = Research.find(:all)
+    @researches = Research.find(:all, :order => "created_at desc")
 
     respond_to do |format|
       format.html # index.html.erb

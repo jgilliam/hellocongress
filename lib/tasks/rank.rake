@@ -47,6 +47,9 @@ namespace :rank do
       end
       
     end
+    
+    Ranking.connection.execute("delete from rankings where created_at < date_add(now(), INTERVAL -31 DAY)")
+    
   end
   
 end
